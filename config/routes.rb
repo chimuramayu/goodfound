@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   get '/timeline', to: 'posts#index', as: :timeline
   root 'home#top'
   get '/about', to: 'home#about', as: :about
+  get '/list', to: 'home#list', as: :list
 end

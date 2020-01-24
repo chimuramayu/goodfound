@@ -10,12 +10,82 @@
   </head>
 
   <header>
-    <%= link_to "会員登録", new_user_registration_path %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <% if user_signed_in? %>
+          <%= link_to timeline_path, class: "navbar-brand navbar-left" do %>
+            Goodfound
+          <% end %>
+        <% else %>
+          <%= link_to root_path, class: "navbar-brand" do %>
+            Goodfound
+          <% end %>
+        <% end %>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+          <% if user_signed_in? %>
+            <ul class="navbar-nav mr-auto navbar-right">
+              <li class="nav-item">
+                <%= link_to new_post_path do %>
+                  投稿する
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to list_path do %>
+                  <strong>音楽を見つける</strong>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to about_path do %>
+                  about
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to user_path(current_user) do %>
+                  マイページ
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                  ログアウト
+                <% end %>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="navbar-nav mr-auto navbar-right">
+              <li class="nav-item">
+                <%= link_to list_path do %>
+                  <strong>音楽を見つける</strong>
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to about_path do %>
+                  about
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_session_path do %>
+                  ログイン
+                <% end %>
+              </li>
+              <li class="nav-item">
+                <%= link_to new_user_registration_path do %>
+                  会員登録
+                <% end %>
+              </li>
+            </ul>
+          <% end %>
+        </div>
+      </div>
+    </nav>
   </header>
 
   <body>
     <%= yield %>
   </body>
+
+  <footer>
+  </footer>
 </html>
