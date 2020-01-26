@@ -17,3 +17,14 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import 'bootstrap';
 
+// all
+.container {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+// posts#index
+.post {
+	border: 1px solid black;
+	padding: 20px 40px;
+}
+
