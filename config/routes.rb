@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy]
   resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
   	resources :comments, only: [:create, :destroy]
+    resource :favorites, only: [:create, :destroy]
   end
-  get '/timeline', to: 'posts#index', as: :timeline
+  get '/timeline', to: 'posts#index', as: :timeline do
+    resource :favorites, only: [:create, :destroy]
+  end
   root 'home#top'
   get '/about', to: 'home#about', as: :about
   get '/list', to: 'home#list', as: :list

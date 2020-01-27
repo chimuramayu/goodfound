@@ -21,7 +21,18 @@
 			</div>
 			<% end %>
 			<div class="favorites">
-				<span>おきにいり</span>
+				<% if post.favorited_by?(current_user) %>
+					<%= link_to post_favorites_path(post), method: :delete do %>
+						<i class="fas fa-star"></i>
+					<% end %>
+					<span><%= post.favorites.count %>おきにいり</span>
+				<% else %>
+					<%= link_to post_favorites_path(post), method: :post do %>
+						<i class="far fa-star"></i>
+					<% end %>
+					<span><%= post.favorites.count %>おきにいり</span>
+				<% end %>
+				<i class="far fa-comment"></i>
 				<span><%= post.comments.count %>コメント</span>
 				<span><%= link_to '編集', edit_post_path(post) %>
 				</span>
