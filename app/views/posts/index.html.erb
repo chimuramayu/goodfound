@@ -29,9 +29,9 @@
 				</div>
 			</div>
 			<div class="reactions">
-				<div id="favorite-button-<%= post.id %>">
+				<span id="favorite-button-<%= post.id %>">
 					<%= render 'favorites/favorite', post: post %>
-				</div>
+				</span>
 				<%= link_to post_path(post) do %>
 					<i class="far fa-comment"></i>
 				<% end %>

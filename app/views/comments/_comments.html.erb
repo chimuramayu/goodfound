@@ -1,0 +1,6 @@
+<ul>
+	<% post.comments.each do |comment| %>
+		<li><%= comment.comment %>
+		<%= link_to 'X', post_comment_path(post, comment), method: :delete, remote: true %></li>
+	<% end %>
+</ul>
