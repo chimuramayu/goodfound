@@ -28,19 +28,13 @@
 					<p><span><%= post.body %></span></p>
 				</div>
 			</div>
-			<div class="favorites">
-				<% if post.favorited_by?(current_user) %>
-					<%= link_to post_favorites_path(post), method: :delete do %>
-						<i class="fas fa-star"></i>
-					<% end %>
-					<span><%= post.favorites.count %>おきにいり</span>
-				<% else %>
-					<%= link_to post_favorites_path(post), method: :post do %>
-						<i class="far fa-star"></i>
-					<% end %>
-					<span><%= post.favorites.count %>おきにいり</span>
+			<div class="reactions">
+				<div id="favorite-button-<%= post.id %>">
+					<%= render 'favorites/favorite', post: post %>
+				</div>
+				<%= link_to post_path(post) do %>
+					<i class="far fa-comment"></i>
 				<% end %>
-				<i class="far fa-comment"></i>
 				<span><%= post.comments.count %>コメント</span>
 			</div>
 			<div class="actions">
