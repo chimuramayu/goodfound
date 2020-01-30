@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<div class="user-nav">
-		<span><%= @favorites.count %>おきにいり</span>
+		<span><%= link_to @favorites.count, favorites_user_path(@user) %>おきにいり</span>
 		<span><%= link_to @following.count, following_user_path(@user) %>follow</span>
 		<span><%= link_to @followers.count, followers_user_path(@user) %>follower</span>
 	</div>

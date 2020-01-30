@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   	@favorites = @user.favorites
     @following = @user.followings
     @followers = @user.followers
-  	@posts = @user.posts
+  	@posts = @user.posts.order(id: "DESC")
   end
 
   def edit
@@ -31,6 +31,11 @@ class UsersController < ApplicationController
   def followers
     user = User.find(params[:id])
     @users = user.followers
+  end
+
+  def favorites
+    user = User.find(params[:id])
+    @posts = user.favorite_posts.order(id: "DESC")
   end
 
   private
