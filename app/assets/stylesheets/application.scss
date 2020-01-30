@@ -20,21 +20,98 @@
 @import 'font-awesome';
 
 // all
-.body {
+.clearfix::after {
+	display: block;
+	content: "";
+	clear: both;
+}
+.main {
 	padding-top: 30px;
 	padding-bottom: 30px;
-	background-color: #d2b48c;
 }
 
 // posts#index
-.post {
-	padding: 20px 40px;
-	margin-bottom: 20px;background-color: #d2b48c;
-	background-color: #FFFFFF;
+.timeline {
+	background-color: #f5f5f5;
 }
-.post-content {
-	margin: 20px 0;
+.tl-post {
+	margin: 0 auto;
+	width: 50%;
+	padding: 20px 30px;
+	background-color: #ffffff;
+	.tl-post-image, .tl-post-detail {
+		float: left;
+	}
+}
+.tl-post-content {
+	padding: 15px 0;
+	.tl-post-detail {
+		margin-left: 30px;
+		font-size: 30px;
+		span {
+			font-size: 17px;
+		}
+	}
 }
 
 // posts#show
+
+// users#show
+.profile {
+	margin: 0 auto 30px;
+	padding : 20px 70px;
+	width : 80%;
+	.actions {
+		float: right;
+	}
+}
+.p-icon-image {
+	float: left;
+	border-radius: 35px;
+}
+.p-profile {
+	float: left;
+	margin-left: 30px;
+	font-size: 15px;
+	p {
+		margin-bottom: 5px;
+	}
+}
+.p-name {
+	font-size: 25px;
+}
+.user-nav {
+	border-top: 3px solid gray;
+	border-bottom: 3px solid gray;
+	width: 80%;
+	margin: 0 auto;
+	padding : 30px 15px;
+	text-align: center;
+	span {
+		margin: 0 30px;
+	}
+}
+.user-posts {
+	width: 80%;
+	margin: 30px auto;
+	.user-post, .user-post-image, .user-post-content {
+		float: left;
+	}
+	.user-post {
+		border: 1px solid gray;
+		padding: 30px 30px;
+		width: 40%;
+		margin-right: 5%;
+		.user-post-image {
+			margin-right: 30px;
+		}
+		.user-post-content {
+			font-size: 22px;
+		}
+	}
+}
+
+
+
+
 

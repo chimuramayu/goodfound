@@ -1,2 +1,41 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="main">
+	<div class="profile clearfix">
+		<div class="p-icon-image">
+			<%= attachment_image_tag @user, :icon_image, :fill, 80, 80 %>
+		</div>
+		<div class="p-profile">
+			<p class="p-username">@<%= @user.username %></p>
+			<p class="p-name"><strong><%= @user.name %></strong></p>
+			<%= @user.profile %>
+		</div>
+		<div class="actions">
+			<%= link_to "プロフィールを編集", edit_user_path(current_user), class: "btn btn-outline-warning" %>
+		</div>
+	</div>
+	<div class="user-nav">
+		<span><%= @favorites.count %>おきにいり</span>
+		<span>follow</span>
+		<span>follower</span>
+	</div>
+	<div class="user-posts clearfix">
+		<% @posts.each do |post| %>
+			<div class="user-post clearfix">
+				<div class="user-post-image">
+					<%= attachment_image_tag post, :post_image, :fill, 200, 200 %>
+				</div>
+				<div class="user-post-content">
+					<% if post.song != nil %>
+						<p><i class="fas fa-music"></i>
+						<strong><%= post.song %></strong></p>
+					<% end %>
+					<% if post.album != nil %>
+						<p><i class="fas fa-compact-disc"></i>
+						<strong><%= post.album %></strong></p>
+					<% end %>
+					<p><i class="fas fa-user-circle"></i>
+					<strong><%= post.artist %></strong></p>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>
