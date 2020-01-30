@@ -39,6 +39,7 @@
 	width: 50%;
 	padding: 20px 30px;
 	background-color: #ffffff;
+	box-shadow: 0 0 8px gray;
 	.tl-post-image, .tl-post-detail {
 		float: left;
 	}
@@ -67,7 +68,8 @@
 }
 .p-icon-image {
 	float: left;
-	border-radius: 35px;
+	border-radius: 50%;
+	overflow:hidden;
 }
 .p-profile {
 	float: left;

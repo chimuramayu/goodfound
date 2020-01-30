@@ -1,7 +1,7 @@
 <div class="main">
 	<div class="profile clearfix">
 		<div class="p-icon-image">
-			<%= attachment_image_tag @user, :icon_image, :fill, 80, 80 %>
+			<%= attachment_image_tag @user, :icon_image, :fill, 100, 100 %>
 		</div>
 		<div class="p-profile">
 			<p class="p-username">@<%= @user.username %></p>
@@ -9,13 +9,21 @@
 			<%= @user.profile %>
 		</div>
 		<div class="actions">
-			<%= link_to "プロフィールを編集", edit_user_path(current_user), class: "btn btn-outline-warning" %>
+			<% if current_user != @user %>
+        <% if @user.followed_by?(current_user) %>
+            <p><%=link_to "フォロー中", user_relationships_path(@user.id), method: :delete, class: "btn btn-primary" %></p>
+        <% else %>
+            <p><%=link_to "フォロー", user_relationships_path(@user.id), method: :post, class: "btn btn-default" %></p>
+        <% end %>
+    	<% else %>
+				<%= link_to "プロフィールを編集", edit_user_path(current_user), class: "btn btn-outline-warning" %>
+			<% end %>
 		</div>
 	</div>
 	<div class="user-nav">
 		<span><%= @favorites.count %>おきにいり</span>
-		<span>follow</span>
-		<span>follower</span>
+		<span><%= link_to @following.count, following_user_path(@user) %>follow</span>
+		<span><%= link_to @followers.count, followers_user_path(@user) %>follower</span>
 	</div>
 	<div class="user-posts clearfix">
 		<% @posts.each do |post| %>

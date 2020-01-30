@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update, :destroy] do
     member do
       get :following, :followers
-      resource :relationships, only: [:create, :destroy]
     end
+    resource :relationships, only: [:create, :destroy]
   end
   resources :posts, only: [:new, :create, :show, :edit, :update, :destroy] do
   	resources :comments, only: [:create, :destroy]
