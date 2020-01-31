@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers, :favorites]
+
   def show
-  	@user = User.find(params[:id])
   	@favorites = @user.favorites
     @following = @user.followings
     @followers = @user.followers
@@ -8,11 +10,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
@@ -24,22 +24,23 @@ class UsersController < ApplicationController
   end
 
   def following
-    user = User.find(params[:id])
-    @users = user.followings
+    @users = @user.followings
   end
 
   def followers
-    user = User.find(params[:id])
-    @users = user.followers
+    @users = @user.followers
   end
 
   def favorites
-    user = User.find(params[:id])
-    @posts = user.favorite_posts.order(id: "DESC")
+    @posts = @user.favorite_posts.order(id: "DESC")
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :profile, :icon_image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end

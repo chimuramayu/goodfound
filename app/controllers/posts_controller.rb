@@ -1,6 +1,17 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_collect_user, only: [:edit, :update, :destroy]
+
   def index
-    @posts = Post.all.order(id: "DESC")
+    followings = current_user.followings
+    # タイムラインにログインしているユーザーを追加
+    timeline_users = [current_user]
+    # タイムラインにフォローしているユーザーを1人ずつ追加
+    followings.each do |following|
+      timeline_users << following
+    end
+    @posts = Post.where(user_id: timeline_users).order(id: "DESC")
   end
 
   def new
@@ -18,18 +29,15 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments
     @favorites = @post.favorites
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to timeline_path
     else
@@ -38,7 +46,6 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
     redirect_to timeline_path
   end
@@ -46,5 +53,15 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:song, :album, :artist, :body, :post_image, :user_id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
+
+  def ensure_collect_user
+    if current_user.id != @post.user_id
+      redirect_to timeline_path(@user)
+    end
   end
 end
