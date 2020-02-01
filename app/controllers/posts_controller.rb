@@ -52,7 +52,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:song, :album, :artist, :body, :post_image, :user_id)
+    params.require(:post).permit(:song, :album, :artist, :body, :post_image, :user_id, :genre_id)
   end
 
   def set_post

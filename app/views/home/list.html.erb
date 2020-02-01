@@ -1,1 +1,17 @@
-list
+<div class="main">
+	<!-- 曲、アルバム、アーティストの検索窓 -->
+	<%= form_tag(search_path, method: :get) do %>
+		<%= text_field_tag :search %>
+		<%= radio_button_tag :detail, "song" %>
+		<%= label_tag :detail, '曲' %>
+		<%= radio_button_tag :detail, "album" %>
+		<%= label_tag :detail, 'アルバム' %>
+		<%= radio_button_tag :detail, "artist" %>
+		<%= label_tag :detail, 'アーティスト' %>
+		<%= submit_tag '検索' %>
+	<% end %>
+	<!-- ジャンル検索 -->
+	<% @genres.each do |genre| %>
+		<li><%= link_to genre.name, genre_path(genre) %></li>
+	<% end %>
+</div>

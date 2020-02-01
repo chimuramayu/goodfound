@@ -13,10 +13,13 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
 
+  resources :genres, only: [:show]
+
   get '/timeline', to: 'posts#index', as: :timeline do
     resource :favorites, only: [:create, :destroy]
   end
   root 'home#top'
   get '/about', to: 'home#about', as: :about
   get '/list', to: 'home#list', as: :list
+  get '/search', to: 'search#search', as: :search
 end

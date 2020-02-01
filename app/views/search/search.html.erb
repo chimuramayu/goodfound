@@ -1,0 +1,25 @@
+<div class="main">
+	<h2>検索結果<span>(<%= @detail %>)</span>
+	<div class="user-posts clearfix">
+		<p>"<%= @search %>"</p>
+	<% @results.each do |result| %>
+		<div class="user-post clearfix">
+			<div class="user-post-image">
+				<%= attachment_image_tag result, :post_image, :fill, 200, 200 %>
+			</div>
+			<div class="user-post-content">
+				<% if result.song != nil %>
+					<p><i class="fas fa-music"></i>
+					<strong><%= result.song %></strong></p>
+				<% end %>
+				<% if result.album != nil %>
+					<p><i class="fas fa-compact-disc"></i>
+					<strong><%= result.album %></strong></p>
+				<% end %>
+				<p><i class="fas fa-user-circle"></i>
+				<strong><%= result.artist %></strong></p>
+			</div>
+		</div>
+	<% end %>
+</div>
+</div>
