@@ -1,6 +1,12 @@
 <ul>
 	<% post.comments.each do |comment| %>
-		<li><%= comment.comment %>
-		<%= link_to 'X', post_comment_path(post, comment), method: :delete, remote: true %></li>
+		<li>
+			<%= link_to user_path(comment.user) do %>
+				<%= attachment_image_tag comment.user, :icon_image, :fill, 30, 30, fallback: "default-user-image.png", size: "30x30" %>
+					<%= comment.user.name %>
+			<% end %>
+			<%= comment.comment %>
+			<span><%= time_ago_in_words(comment.created_at) %></span>
+		<%= link_to 'X', post_comment_path(post, comment), method: :delete, remote: true, data: {confirm: "本当に削除しますか？"} %></li>
 	<% end %>
 </ul>

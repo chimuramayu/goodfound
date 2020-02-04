@@ -1,26 +1,7 @@
 <div class="main">
-	<h2>フォロー</h2>
-		<table class="table">
-			<% @users.each do |user| %>
-				<tbody>
-					<tr>
-						<td><%= attachment_image_tag user, :icon_image, :fill, 50, 50 %></td>
-						<td><%= user.name %></td>
-						<td><%= user.username %></td>
-						<td><%= user.followings.count %>フォロー</td>
-						<td><%= user.followers.count %>フォロワー</td>
-						<td>
-							<% if current_user != user %>
-				        <% if user.followed_by?(current_user) %>
-				            <p><%=link_to "フォロー中", user_relationships_path(user.id), method: :delete, class: "btn btn-primary" %></p>
-				        <% else %>
-				            <p><%=link_to "フォローする", user_relationships_path(user.id), method: :post, class: "btn btn-default" %></p>
-				        <% end %>
-					    <% end %>
-					  </td>
-					</tr>
-				</tbody>
-			<% end %>
-		</table>
+	<div class="follow-index container">
+		<h4>フォロー中</h4>
+		<%= render 'users/follow_user_index', users: @users %>
+	</div>
 </div>
 
