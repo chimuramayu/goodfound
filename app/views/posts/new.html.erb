@@ -4,7 +4,15 @@
 		<div class="row">
 			<div class="col-5 offset-1">
 				<%= f.label :post_image, "画像" %>
-				<%= f.attachment_field :post_image %>
+				<div id="img-feild" onClick="$('#file').click()">
+					<% if @post_image.present? %>
+						<%= attachment_image_tag @post, :post_image, :fill, 300, 300, id: "img", fallback: "" %>
+					<% else %>
+						<%= attachment_image_tag @post, :post_image, :fill, 300, 300, id: "img", fallback: "" %>
+						<i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+	        <% end %>
+	      </div>
+				<%= f.attachment_field :post_image, id: "file", accept: "image/*" %>
 			</div>
 			<div class="col-5">
 				<div class="form-group">
@@ -21,7 +29,7 @@
 				</div>
 				<div class="form-group">
 					<%= f.label :genre_id, "ジャンル" %>
-					<%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "選択してください", class: "form-control" %>
+					<%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "選択してください", class: "form-control" %>
 				</div>
 				<div class="form-group">
 					<%= f.label :body, "お気に入りポイント" %>
@@ -33,4 +41,3 @@
 		<% end %>
 	</div>
 </div>
-

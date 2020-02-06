@@ -1,0 +1,23 @@
+<div class="post-user">
+	<div class="user-detail">
+		<div class="icon-image">
+			<%= link_to user_path(post.user) do %>
+				<%= attachment_image_tag post.user, :icon_image, :fill, 60, 60, fallback: "default-user-image.png", size: "60x60" %>
+			<% end %>
+		</div>
+		<p><strong><%= post.user.name %></strong>
+			<span>@<%= post.user.username %></span>
+			<span><%= l post.created_at, format: :long %></span>
+		</p>
+	</div>
+	<% if post.user == current_user %>
+		<div class="actions">
+			<span><%= link_to edit_post_path(post) do %>
+				<i class="far fa-edit"></i>
+			<% end %></span>
+			<span><%= link_to post_path(post), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
+				<i class="far fa-trash-alt"></i>
+			<% end %></span>
+		</div>
+	<% end %>
+</div>

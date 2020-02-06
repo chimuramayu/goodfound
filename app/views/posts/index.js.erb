@@ -1,0 +1,2 @@
+$('#timeline-lists').append("<%= j(render 'posts/timeline', object: @posts) %>");
+$('#tl-more-posts').replaceWith("<%= j(link_to_next_page @posts, 'もっと見る', id: 'more-posts', remote: true) %>");

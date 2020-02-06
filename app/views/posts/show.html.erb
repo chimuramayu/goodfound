@@ -1,35 +1,14 @@
 <div class="main timeline">
-	<div class="tl-post">
-		<div class="tl-post-user">
-			<div class="tl-user-detail">
-				<div class="tl-icon-image">
-					<%= link_to user_path(@post.user) do %>
-						<%= attachment_image_tag @post.user, :icon_image, :fill, 60, 60, fallback: "default-user-image.png", size: "60x60" %>
-					<% end %>
-				</div>
-				<p><strong><%= @post.user.name %></strong>
-					<span>@<%= @post.user.username %></span>
-				</p>
-			</div>
-			<% if @post.user == current_user %>
-				<div class="actions">
-					<span><%= link_to edit_post_path(@post) do %>
-						<i class="far fa-edit"></i>
-					<% end %></span>
-					<span><%= link_to post_path(@post), method: :delete, data: {confirm: "本当に削除しますか？"} do %>
-						<i class="far fa-trash-alt"></i>
-					<% end %></span>
-				</div>
-			<% end %>
-		</div>
+	<div class="post-box">
+		<%= render 'posts/post_user', post: @post %>
 
-		<div class="tl-post-content">
-			<div class="tl-post-image">
+		<div class="post-content">
+			<div class="post-image">
 				<%= link_to post_path(@post) do %>
 					<%= attachment_image_tag @post, :post_image, :fill, 250, 250  %>
 				<% end %>
 			</div>
-			<div class="tl-post-detail">
+			<div class="post-detail">
 				<% if @post.song != nil %>
 					<p><i class="fas fa-music"></i>
 					<strong><%= @post.song %></strong></p>
@@ -40,6 +19,10 @@
 				<% end %>
 				<p><i class="fas fa-user-circle"></i>
 				<strong><%= @post.artist %></strong></p>
+				<% if @post.genre.name != nil %>
+					<p><i class="fas fa-th"></i>
+					<strong><%= @post.genre.name %></strong></p>
+				<% end %>
 				<p><span><%= @post.body %></span></p>
 			</div>
 		</div>
@@ -59,9 +42,9 @@
 				<%= render 'comments/comments', post: @post %>
 			</div>
 			<%= form_with(model: [@post, @comment]) do |f| %>
-				<%= f.text_area :comment %>
+				<%= f.text_area :comment, placeholder: "コメント" %>
 				<%= f.submit "送信" %>
-			<% end %>
+				<% end %>
 		</div>
 	</div>
 </div>

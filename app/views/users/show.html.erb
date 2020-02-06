@@ -1,55 +1,57 @@
-<div class="main user-page">
-	<div class="profile">
-		<div class="p-icon-image">
-			<%= attachment_image_tag @user, :icon_image, :fill, 100, 100 %>
-		</div>
-		<div class="p-profile">
-			<p class="p-name">
-				<strong><%= @user.name %></strong>
-				<span>@<%= @user.username %></span>
-			</p>
-			<%= @user.profile %>
-		</div>
-		<div class="actions">
-			<% if current_user != @user %>
-        <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
-    	<% else %>
-				<%= link_to edit_user_path(current_user), class: "btn btn-outline-secoundly" do %>
-					<i class="fas fa-user-edit"></i>
+<div class="main">
+	<div class="user-page">
+		<div class="profile">
+			<div class="p-icon-image">
+				<%= attachment_image_tag @user, :icon_image, :fill, 100, 100 %>
+			</div>
+			<div class="p-profile">
+				<p class="p-name">
+					<strong><%= @user.name %></strong>
+					<span>@<%= @user.username %></span>
+				</p>
+				<%= @user.profile %>
+			</div>
+			<div class="actions">
+				<% if current_user != @user %>
+	        <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
+	    	<% else %>
+					<%= link_to edit_user_path(current_user), class: "btn btn-outline-secoundly" do %>
+						<i class="fas fa-user-edit"></i>
+					<% end %>
 				<% end %>
+			</div>
+		</div>
+		<div class="user-nav">
+			<p><strong><%= @posts.count %></strong> 投稿</p>
+			<p>
+				<i class="fas fa-heart" style="color: red;"></i>
+				<strong><%= link_to @favorites.count, favorites_user_path(@user) %></strong>
+			</p>
+			<p><strong><%= link_to @following.count, following_user_path(@user) %></strong> follow</p>
+			<p><strong><%= link_to @followers.count, followers_user_path(@user) %></strong> follower</p>
+		</div>
+		<div class="user-posts">
+			<% @posts.each do |post| %>
+				<div class="user-post">
+					<%= link_to post_path(post) do %>
+						<div class="user-post-image">
+							<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
+						</div>
+						<div class="user-post-content">
+							<% if post.song != nil %>
+								<p><i class="fas fa-music"></i>
+								<strong><%= post.song %></strong></p>
+							<% end %>
+							<% if post.album != nil %>
+								<p><i class="fas fa-compact-disc"></i>
+								<strong><%= post.album %></strong></p>
+							<% end %>
+						<% end %>
+						<p><i class="fas fa-user-circle"></i>
+						<strong><%= post.artist %></strong></p>
+					</div>
+				</div>
 			<% end %>
 		</div>
-	</div>
-	<div class="user-nav">
-		<p><strong><%= @posts.count %></strong> 投稿</p>
-		<p>
-			<i class="fas fa-heart"></i>
-			<strong><%= link_to @favorites.count, favorites_user_path(@user) %></strong> おきにいり
-		</p>
-		<p><strong><%= link_to @following.count, following_user_path(@user) %></strong> follow</p>
-		<p><strong><%= link_to @followers.count, followers_user_path(@user) %></strong> follower</p>
-	</div>
-	<div class="user-posts">
-		<% @posts.each do |post| %>
-			<div class="user-post">
-				<%= link_to post_path(post) do %>
-					<div class="user-post-image">
-						<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
-					</div>
-					<div class="user-post-content">
-						<% if post.song != nil %>
-							<p><i class="fas fa-music"></i>
-							<strong><%= post.song %></strong></p>
-						<% end %>
-						<% if post.album != nil %>
-							<p><i class="fas fa-compact-disc"></i>
-							<strong><%= post.album %></strong></p>
-						<% end %>
-					<% end %>
-					<p><i class="fas fa-user-circle"></i>
-					<strong><%= post.artist %></strong></p>
-				</div>
-			</div>
-		<% end %>
 	</div>
 </div>
