@@ -3,10 +3,8 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers, :favorites]
 
   def show
-  	@favorites = @user.favorites
-    @following = @user.followings
-    @followers = @user.followers
-  	@posts = @user.posts.order(created_at: "DESC").page(params[:page]).per(6)
+  	@posts = @user.posts.order(id: "DESC").page(params[:page]).per(6)
+    @post_count = @user.posts
   end
 
   def edit
@@ -32,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @posts = @user.favorite_posts.order(id: "DESC")
+    @favorites = @user.favorite_posts.order(id: "DESC").page(params[:page]).per(10)
   end
 
   private

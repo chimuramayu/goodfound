@@ -22,13 +22,13 @@
 			</div>
 		</div>
 		<div class="user-nav">
-			<p><strong><%= @posts.count %></strong> 投稿</p>
+			<p><strong><%= @post_count.count %></strong> 投稿</p>
 			<p>
 				<i class="fas fa-heart" style="color: red;"></i>
-				<strong><%= link_to @favorites.count, favorites_user_path(@user) %></strong>
+				<strong><%= link_to @user.favorites.count, favorites_user_path(@user) %></strong>
 			</p>
-			<p><strong><%= link_to @following.count, following_user_path(@user) %></strong> follow</p>
-			<p><strong><%= link_to @followers.count, followers_user_path(@user) %></strong> follower</p>
+			<p><strong><%= link_to @user.followings.count, following_user_path(@user) %></strong> follow</p>
+			<p><strong><%= link_to @user.followers.count, followers_user_path(@user) %></strong> follower</p>
 		</div>
 		<!-- ユーザーのポスト一覧 -->
 		<div class="post-index" id="user-post-index">

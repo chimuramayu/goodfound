@@ -39,7 +39,6 @@ a {
 }
 .btn-original
 
-
 // home#top
 
 // home#list
@@ -185,11 +184,6 @@ a {
 				display: flex;
 				margin-right: auto;
 
-				.icon-image {
-					border-radius: 50%;
-					border: 1px solid gray;
-					overflow: hidden;
-				}
 				p {
 					margin-left: 10px;
 					font-size: 20px;
@@ -296,11 +290,6 @@ a {
 		padding: 20px 70px;
 		display: flex;
 
-		.icon-image {
-			border: 1px solid gray;
-			border-radius: 50%;
-			overflow: hidden;
-		}
 		.p-profile {
 			margin-left: 30px;
 			font-size: 15px;
@@ -376,11 +365,6 @@ a {
 		td {
 		line-height: 50px;
 		}
-		.icon-image {
-			border-radius: 50%;
-			border: 1px solid gray;
-			overflow: hidden;
-		}
 		.name {
 			font-size: 20px;
 		}
@@ -393,4 +377,14 @@ a {
 	}
 }
 
+// user#edit
+
+
+
+// all
+.icon-image {
+	border-radius: 50%;
+	border: 1px solid gray;
+	overflow: hidden;
+}
 

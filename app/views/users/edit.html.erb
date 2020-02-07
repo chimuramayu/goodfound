@@ -1,7 +1,9 @@
 <div class="main">
-	<div class="">
+	<div class="container">
 	<%= form_for(@user) do |f| %>
-		<%= attachment_image_tag @user, :icon_image, :fill, 180, 180 %><br>
+		<div>
+			<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, class:"icon-image" %><br>
+		</div>
 		<%= f.attachment_field :icon_image %>
 		<div class="">
 			<%= f.label :name, "名前" %><br>
