@@ -1,19 +1,24 @@
 <div class="main">
-	<div class="container">
-	<%= form_for(@user) do |f| %>
-		<div>
-			<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, class:"icon-image" %><br>
+	<div class="container user-edit">
+		<div class="col-4 offset-4">
+			<%= form_for(@user) do |f| %>
+				<div class="icon">
+					<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, fallback: "default-user-image.png", class: "icon-image", id: "edit-icon-img" %>
+					<%= f.attachment_field :icon_image, id: "icon-file" %>
+					<label class="btn input-btn" for="icon-file">アイコンを選択</label>
+				</div>
+				<div class="">
+					<%= f.label :name, "名前" %><br>
+					<%= f.text_field :name, class: "form-control" %>
+				</div>
+				<div class="">
+					<%= f.label :profile, "プロフィール" %><br>
+					<%= f.text_area :profile, rows: 8, class: "form-control" %>
+				</div>
+				<div class="actions">
+					<%= f.submit "更新", class: "btn" %>
+				</div>
+			<% end %>
 		</div>
-		<%= f.attachment_field :icon_image %>
-		<div class="">
-			<%= f.label :name, "名前" %><br>
-			<%= f.text_field :name %>
-		</div>
-		<div class="">
-			<%= f.label :profile, "プロフィール" %><br>
-			<%= f.text_area :profile %>
-		</div>
-		<%= f.submit "更新" %>
-	<% end %>
-</div>
+	</div>
 </div>

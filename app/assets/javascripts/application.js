@@ -12,14 +12,13 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 
-// posts#new 画像を表示
-
+// posts#new 画像プレビューを表示
 $(function(){
 	$('#file').change(function(e){
     //ファイルオブジェクトを取得する
@@ -40,6 +39,7 @@ $(function(){
   });
 });
 
+// posts#edit 画像プレビューを表示
 $(function(){
 	$('#file').change(function(e){
     //ファイルオブジェクトを取得する
@@ -54,6 +54,27 @@ $(function(){
     reader.onload = (function(file){
       return function(e){
         $("#edit-img").attr("src", e.target.result);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+// users#edit 画像プレビューを表示
+$(function(){
+  $('#icon-file').change(function(e){
+    //ファイルオブジェクトを取得する
+    var file = e.target.files[0];
+    var reader = new FileReader();
+    //画像でない場合は処理終了
+    if(file.type.indexOf("image") < 0){
+      alert("画像ファイルを指定してください。");
+      return false;
+    }
+    //アップロードした画像を設定する
+    reader.onload = (function(file){
+      return function(e){
+        $("#edit-icon-img").attr("src", e.target.result);
       };
     })(file);
     reader.readAsDataURL(file);

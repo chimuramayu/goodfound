@@ -378,6 +378,27 @@ a {
 }
 
 // user#edit
+.user-edit {
+	.icon {
+		text-align: center;
+
+		.icon-image {
+			width: 250px;
+			height: 250px;
+		}
+		#icon-file {
+			display: none;
+		}
+	}
+	.input-btn {
+	 background-color: lightgray;
+	 border-radius: 5px;
+	}
+	.actions {
+		text-align: center;
+		margin-top: 10px;
+	}
+}
 
 
 

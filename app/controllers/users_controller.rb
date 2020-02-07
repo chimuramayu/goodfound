@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers, :favorites]
 
   def show
-  	@posts = @user.posts.order(id: "DESC").page(params[:page]).per(6)
+  	@posts = @user.posts.order(id: "DESC").page(params[:page]).per(20)
     @post_count = @user.posts
   end
 
@@ -30,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def favorites
-    @favorites = @user.favorite_posts.order(id: "DESC").page(params[:page]).per(10)
+    @favorites = @user.favorite_posts.order(id: "DESC").page(params[:page]).per(20)
   end
 
   private
