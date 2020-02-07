@@ -1,0 +1,2 @@
+$('#user-post-index').append("<%= j(render 'posts/post_index', object: @posts) %>");
+$('#more-user-post-index').replaceWith("<%= j(link_to_next_page @posts, 'more', id: 'more-user-post-index', class: 'more-btn', remote: true) %>");

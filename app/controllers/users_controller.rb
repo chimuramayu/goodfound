@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   	@favorites = @user.favorites
     @following = @user.followings
     @followers = @user.followers
-  	@posts = @user.posts.order(id: "DESC")
+  	@posts = @user.posts.order(created_at: "DESC").page(params[:page]).per(6)
   end
 
   def edit

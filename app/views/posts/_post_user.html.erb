@@ -5,7 +5,8 @@
 				<%= attachment_image_tag post.user, :icon_image, :fill, 60, 60, fallback: "default-user-image.png", size: "60x60" %>
 			<% end %>
 		</div>
-		<p><strong><%= post.user.name %></strong>
+		<p>
+			<strong><%= post.user.name %></strong>
 			<span>@<%= post.user.username %></span>
 			<span><%= l post.created_at, format: :long %></span>
 		</p>

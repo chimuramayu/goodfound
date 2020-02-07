@@ -11,7 +11,7 @@ class PostsController < ApplicationController
     followings.each do |following|
       timeline_users << following
     end
-    @posts = Post.where(user_id: timeline_users).order(created_at: "DESC").page(params[:page]).per(5)
+    @posts = Post.where(user_id: timeline_users).order(created_at: "DESC").page(params[:page]).per(10)
   end
 
   def new

@@ -1,33 +1,45 @@
-<div class="container">
+<div class="main">
+	<div class="container post-form">
 		<%= form_for(@post) do |f| %>
-		<div class="row">
-			<div class="col-5 offset-1">
-				<%= f.label :song, "画像" %>
-				<%= f.attachment_field :post_image %>
+			<div class="row">
+				<div class="col-5 offset-1">
+					<%= f.label :post_image, "画像" %>
+					<div id="img-feild" onClick="$('#file').click()">
+						<% if @post_image.present? %>
+							<%= attachment_image_tag @post, :post_image, :fill, 400, 250, id: "edit-img" %>
+						<% else %>
+							<%= attachment_image_tag @post, :post_image, :fill, 400, 250, id: "edit-img", fallback: "" %>
+							<i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+		        <% end %>
+		      </div>
+					<%= f.attachment_field :post_image, id: "file", accept: "image/*" %>
+				</div>
+				<div class="col-5">
+					<div class="form-group">
+						<%= f.label :song, "曲" %>
+						<%= f.text_field :song, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :album, "アルバム" %>
+						<%= f.text_field :album, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :artist, "アーティスト" %>
+						<%= f.text_field :artist, class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :genre_id, "ジャンル" %>
+						<%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "選択してください", class: "form-control" %>
+					</div>
+					<div class="form-group">
+						<%= f.label :body, "お気に入りポイント" %>
+						<%= f.text_area :body, class:"form-control", rows: 7 %>
+					</div>
+				</div>
 			</div>
-			<div class="col-5">
-				<div class="form-group">
-					<%= f.label :song, "曲" %>
-					<%= f.text_field :song, class:"form-control" %>
-				</div>
-				<div class="form-group">
-					<%= f.label :album, "アルバム" %>
-					<%= f.text_field :album, class:"form-control" %>
-				</div>
-				<div class="form-group">
-					<%= f.label :artist, "アーティスト" %>
-					<%= f.text_field :artist, class:"form-control" %>
-				</div>
-				<div class="form-group">
-					<%= f.label :genre_id, "ジャンル" %>
-					<%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "選択してください", class: "form-control" %>
-				</div>
-				<div class="form-group">
-					<%= f.label :bode, "お気に入りポイント" %>
-					<%= f.text_area :body, class:"form-control" %>
-				</div>
+			<div class="actions">
+				<%= f.submit '更新する', class: "btn" %>
 			</div>
-		</div>
-				<%= f.submit '更新する' %>
 		<% end %>
+	</div>
 </div>

@@ -1,7 +1,7 @@
 <div class="main">
 	<div class="user-page">
 		<div class="profile">
-			<div class="p-icon-image">
+			<div class="icon-image">
 				<%= attachment_image_tag @user, :icon_image, :fill, 100, 100 %>
 			</div>
 			<div class="p-profile">
@@ -30,28 +30,11 @@
 			<p><strong><%= link_to @following.count, following_user_path(@user) %></strong> follow</p>
 			<p><strong><%= link_to @followers.count, followers_user_path(@user) %></strong> follower</p>
 		</div>
-		<div class="user-posts">
-			<% @posts.each do |post| %>
-				<div class="user-post">
-					<%= link_to post_path(post) do %>
-						<div class="user-post-image">
-							<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
-						</div>
-						<div class="user-post-content">
-							<% if post.song != nil %>
-								<p><i class="fas fa-music"></i>
-								<strong><%= post.song %></strong></p>
-							<% end %>
-							<% if post.album != nil %>
-								<p><i class="fas fa-compact-disc"></i>
-								<strong><%= post.album %></strong></p>
-							<% end %>
-						<% end %>
-						<p><i class="fas fa-user-circle"></i>
-						<strong><%= post.artist %></strong></p>
-					</div>
-				</div>
-			<% end %>
+		<!-- ユーザーのポスト一覧 -->
+		<div class="post-index" id="user-post-index">
+			<%= render 'posts/post_index', posts: @posts %>
 		</div>
+		<!-- もっと見る -->
+		<%= link_to_next_page @posts, 'more', id: "more-user-post-index", class: "more-btn", remote: true %>
 	</div>
 </div>
