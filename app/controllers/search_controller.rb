@@ -6,23 +6,27 @@ class SearchController < ApplicationController
 	end
 
 	def results(search, detail)
-		if @detail == "song"
-			if @search.blank?
-				Post.all
-			else
-				Post.where("song LIKE?", "%#{search}%")
-			end
-		elsif @detail == "album"
-			if @search.blank?
-				Post.all
-			else
-				Post.where("album LIKE?", "%#{search}%")
-			end
-		elsif @detail == "artist"
-			if @search.blank?
-				Post.all
-			else
-				Post.where("artist LIKE?", "%#{search}%")
+		if @detail.blank?
+			Post.where("song LIKE? OR album LIKE? OR artist LIKE?", "%#{search}%", "%#{search}%", "%#{search}%")
+		elsif
+			if @detail == "song"
+				if @search.blank?
+					Post.all
+				else
+					Post.where("song LIKE?", "%#{search}%")
+				end
+			elsif @detail == "album"
+				if @search.blank?
+					Post.all
+				else
+					Post.where("album LIKE?", "%#{search}%")
+				end
+			elsif @detail == "artist"
+				if @search.blank?
+					Post.all
+				else
+					Post.where("artist LIKE?", "%#{search}%")
+				end
 			end
 		end
 	end
