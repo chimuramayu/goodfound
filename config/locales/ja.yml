@@ -7,6 +7,23 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
+    models:
+      genre: ジャンル
+    attributes:
+      user:
+        name: ニックネーム
+        username: Goodfound ID
+        profile: プロフィール
+      post:
+        song: 曲
+        album: アルバム
+        song_or_album: 曲またはアルバム
+        artist: アーティスト
+        body: お気に入りポイント
+      comment:
+        comment: コメント
+      genre:
+        name: ジャンル名
   date:
     abbr_day_names:
     - 日
@@ -142,7 +159,7 @@ ja:
     select:
       prompt: 選択してください
     submit:
-      create: 登録する
+      create: 投稿する
       submit: 保存する
       update: 更新する
   number:
@@ -205,3 +222,18 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+  attributes:
+    users:
+      name: ニックネーム
+      username: Goodfound ID
+      profile: プロフィール
+  attributes:
+    posts:
+      song: 曲
+      album: アルバム
+      song_or_album: 曲またはアルバム
+      artist: アーティスト
+      body: お気に入りポイント
+  attributes:
+    comments:
+      comment: コメント

@@ -41,7 +41,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to timeline_path
     else
-      render 'update'
+      render 'edit'
     end
   end
 

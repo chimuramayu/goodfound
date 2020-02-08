@@ -1,4 +1,7 @@
-<div class="follow-index container">
-	<h4>フォロワー</h4>
-	<%= render 'users/follow_user_index', users: @users %>
+<div class="follow-container container">
+	<h5>フォロワー</h5>
+	<div id="followers-index">
+		<%= render 'users/follow_user_index', users: @followers %>
+	</div>
+	<%= link_to_next_page @followers, 'more', id: 'more-followers-index', class: 'more-btn', remote: true %>
 </div>

@@ -1,19 +1,20 @@
-<table class="table">
-	<% users.each do |user| %>
-		<tbody>
-			<tr>
-				<td><%= link_to user_path(user) do %>
-					<%= attachment_image_tag user, :icon_image, :fill, 50, 50, fallback: "default-user-image.png", size: "50x50", class: "icon-image" %>
-					<% end %></td>
-				<td class="name">
-					<%= user.name %>　<span class="username">@<%= user.username %></span>
-				</td>
-				<td><%= user.followings.count %> <span>フォロー</span></td>
-				<td><%= user.followers.count %> <span>フォロワー</span></td>
-				<td>
-	  			<span id="follow-button-<%= user.id %>"><%= render 'relationships/follow', user: user %></span>
-			  </td>
-			</tr>
-		</tbody>
-	<% end %>
-</table>
+<% users.each do |user| %>
+	<div class="follow-user">
+		<div><%= link_to user_path(user) do %>
+			<%= attachment_image_tag user, :icon_image, :fill, 60, 60, fallback: "default-user-image.png", size: "60x60", class: "icon-image" %>
+			<% end %></div>
+		<div class="name">
+			<%= user.name %>
+		</div>
+		<div class="username">@<%= user.username %></div>
+		<div>
+			<%= user.followings.count %> <span>フォロー</span>
+		</div>
+		<div>
+			<%= user.followers.count %> <span>フォロワー</span>
+		</div>
+		<div class="actions">
+			<span id="follow-button-<%= user.id %>"><%= render 'relationships/follow', user: user %></span>
+	  </div>
+	</div>
+<% end %>

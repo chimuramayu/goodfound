@@ -15,6 +15,9 @@ class User < ApplicationRecord
 
 	attachment :icon_image
 
+	validates :name, length: {maximum: 20}
+	validates :profile, length: {maximum: 200}
+
 	def followed_by?(user)
 		passive_relationships.find_by(following_id: user.id).present?
 	end

@@ -70,6 +70,7 @@ gem 'refile-mini_magick'
 gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 gem 'pry-rails'
+gem 'rails-i18n'
 
 group :production do
   gem 'mysql2'

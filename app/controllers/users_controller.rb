@@ -22,11 +22,11 @@ class UsersController < ApplicationController
   end
 
   def following
-    @users = @user.followings
+    @following = @user.followings.order(id: "DESC").page(params[:page]).per(2)
   end
 
   def followers
-    @users = @user.followers
+    @followers = @user.followers.order(id: "DESC").page(params[:page]).per(1)
   end
 
   def favorites

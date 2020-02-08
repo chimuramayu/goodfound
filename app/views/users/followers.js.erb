@@ -1,0 +1,2 @@
+$('#followers-index').append("<%= j(render 'users/follow_user_index', users: @followers) %>");
+$('#more-followers-index').replaceWith("<%= j(link_to_next_page @followers, 'more', id: 'more-followers-index', class: 'more-btn', remote: true) %>");

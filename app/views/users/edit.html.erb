@@ -2,10 +2,13 @@
 	<div class="container user-edit">
 		<div class="col-4 offset-4">
 			<%= form_for(@user) do |f| %>
+				<!-- エラーメッセージ -->
+				<%= render 'layouts/error_message', post: @user %>
+				<!-- 編集フォーム -->
 				<div class="icon">
-					<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, fallback: "default-user-image.png", class: "icon-image", id: "edit-icon-img" %>
-					<%= f.attachment_field :icon_image, id: "icon-file" %>
-					<label class="btn input-btn" for="icon-file">アイコンを選択</label>
+					<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, fallback: "default-user-image.png", class: "icon-image", id: "img" %>
+					<%= f.attachment_field :icon_image, id: "file" %>
+					<label class="btn input-btn" for="file">アイコンを選択</label>
 				</div>
 				<div class="">
 					<%= f.label :name, "名前" %><br>
