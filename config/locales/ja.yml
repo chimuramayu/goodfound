@@ -7,8 +7,6 @@ ja:
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
           has_many: "%{record}が存在しているので削除できません"
-    models:
-      genre: ジャンル
     attributes:
       user:
         name: ニックネーム
@@ -20,6 +18,7 @@ ja:
         song_or_album: 曲またはアルバム
         artist: アーティスト
         body: お気に入りポイント
+        genre: ジャンル
       comment:
         comment: コメント
       genre:
