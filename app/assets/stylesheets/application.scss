@@ -160,9 +160,10 @@ input.font-awesome {
 
 		.genre-items {
 			display: flex;
+			justify-content: center;
 			align-content: center;
 			flex-wrap: wrap;
-			width: 70%;
+			width: 65%;
 			margin: 20px auto;
 
 			.genre-item {
@@ -183,16 +184,15 @@ input.font-awesome {
 }
 #img-feild {
   border: solid 1px #ced4da;
-  color: #666;
   position: relative;
   border-radius: 5px;
   cursor: pointer;
   width: 400px;
   height: 250px;
   background-color: #fff;
-  // background-position: center;
-  // background-repeat: no-repeat;
- 	// background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+ 	background-size: contain;
   overflow: hidden;
   box-sizing: border-box;
   transition: 0.3s ease-out;
@@ -202,24 +202,26 @@ input.font-awesome {
   }
 	i {
 	  font-size: 100px;
-	  color: #dcdcdc;
-	  line-height: 250px;
+	  color: gray;
 	  transition: 0.3s ease-out;
+	  position: absolute;
+	  top: 70px;
+	  right: 150px;
 	}
 	i.add {
 	  display: none;
 	  font-size: 50px;
 	  position: absolute;
-	  top: -90px;
+	  top: 10px;
 	  right: 15px;
 	}
 	&:hover {
 	  background-color: #dcdcdc;
-	  transition: 0.3s ease-out;
-	  opacity: 0.9;
+	  transition: 0.2s ease-out;
+	  opacity: 0.8;
 	}
 	&:hover i {
-	  transition: 0.3s ease-out;
+	  transition: 0.2s ease-out;
 	  display: block;
 	  color: #fff;
 	}

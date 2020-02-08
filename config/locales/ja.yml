@@ -12,6 +12,8 @@ ja:
         name: ニックネーム
         username: Goodfound ID
         profile: プロフィール
+        email: メールアドレス
+        password: パスワード
       post:
         song: 曲
         album: アルバム
@@ -221,18 +223,3 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
-  attributes:
-    users:
-      name: ニックネーム
-      username: Goodfound ID
-      profile: プロフィール
-  attributes:
-    posts:
-      song: 曲
-      album: アルバム
-      song_or_album: 曲またはアルバム
-      artist: アーティスト
-      body: お気に入りポイント
-  attributes:
-    comments:
-      comment: コメント
