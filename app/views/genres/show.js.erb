@@ -1,0 +1,2 @@
+$('#genre-search-index').append("<%= j(render 'posts/post_index', posts: @posts) %>");
+$('#more-genre-search').replaceWith("<%= j(link_to_next_page @posts, 'more', id: 'more-genre-search', class: 'more-btn', remote: true) %>");

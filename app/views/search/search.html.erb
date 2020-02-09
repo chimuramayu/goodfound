@@ -11,10 +11,12 @@
 				<% if @results.empty? %>
 					<div class="post-none">該当する投稿がありませんでした</div>
 				<% else %>
-					<div class="post-index">
-					<%= render 'posts/post_index', posts: @results %>
+					<div class="post-index" id="search-index">
+						<%= render 'posts/post_index', posts: @results %>
+					</div>
+					<!-- もっと見る -->
+					<%= link_to_next_page @results, 'more', id: "more-search", class: "more-btn", remote: true %>
 				<% end %>
-				</div>
 			</div>
 		</div>
 	</div>

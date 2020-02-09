@@ -6,7 +6,9 @@
 		<div class="name">
 			<%= user.name %>
 		</div>
-		<div class="username">@<%= user.username %></div>
+		<div class="username">
+			<span>@<%= user.username %></span>
+		</div>
 		<div>
 			<%= link_to following_user_path(user) do %>
 				<%= user.followings.count %> <span>フォロー</span>
@@ -14,7 +16,7 @@
 		</div>
 		<div>
 			<%= link_to followers_user_path(user) do %>
-				<span id="follower_count"><%= user.followers.count %></sapn> <span>フォロワー</span>
+				<p id="follower_count"><%= user.followers.count %></p> <span>フォロワー</span>
 			<% end %>
 		</div>
 		<div class="actions">

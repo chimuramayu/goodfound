@@ -2,7 +2,7 @@ class SearchController < ApplicationController
 	def search
 		@search = params[:search]
 		@detail = params[:detail]
-		@results = results(@search, @detail)
+		@results = results(@search, @detail).order(id: "DESC").page(params[:page]).per(20)
 		@genres = Genre.all
 	end
 

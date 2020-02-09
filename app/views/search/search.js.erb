@@ -1,0 +1,2 @@
+$('#search-index').append("<%= j(render 'posts/post_index', posts: @results) %>");
+$('#more-search').replaceWith("<%= j(link_to_next_page @results, 'more', id: 'more-search', class: 'more-btn', remote: true) %>");
