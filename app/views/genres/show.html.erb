@@ -5,14 +5,16 @@
 				<%= render 'layouts/sidebar', genres: @genres %>
 			</div>
 
-			<div class="col-lg-9">
-				<div class="user-page">
-					<h2>検索結果</h2>
-					<p>"<%= @genre.name %>"</p>
+			<div class="results col-lg-9">
+				<h4 class="headline">検索結果</h4>
+				<p class="item-name">"<strong><%= @genre.name %></strong>"</p>
+				<% if @posts.empty? %>
+					<div class="post-none">該当する投稿がありませんでした</div>
+				<% else %>
 					<div class="post-index">
 						<%= render 'posts/post_index', posts: @posts %>
 					</div>
-				</div>
+				<% end %>
 			</div>
 		</div>
 	</div>

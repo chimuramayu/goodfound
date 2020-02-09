@@ -5,11 +5,15 @@
 				<%= render 'layouts/sidebar', genres: @genres %>
 			</div>
 
-			<div class="user-page col-lg-9">
-				<h2>検索結果<span>(<%= @detail %>)</span></h2>
-				<p>"<%= @search %>"</p>
-				<div class="post-index">
+			<div class="results col-lg-9">
+				<h4 class="headline">検索結果<span>(<%= @detail %>)</span></h4>
+				<p class="item-name">"<strong><%= @search %></strong>"</p>
+				<% if @results.empty? %>
+					<div class="post-none">該当する投稿がありませんでした</div>
+				<% else %>
+					<div class="post-index">
 					<%= render 'posts/post_index', posts: @results %>
+				<% end %>
 				</div>
 			</div>
 		</div>
