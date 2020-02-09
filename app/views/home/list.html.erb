@@ -1,3 +1,5 @@
+<div class="list-main-visual">
+</div>
 <div class="search-container">
 	<h3><strong>音楽を見つける</strong></h3>
 	<div class="keyword-search">
@@ -35,7 +37,7 @@
 				</div>
 			</div>
 			<div class="actions">
-				<%= submit_tag '見つける', class: "btn" %>
+				<%= submit_tag '見つける', class: "btn btn-danger btn-orange" %>
 			</div>
 		<% end %>
 	</div>
@@ -46,7 +48,7 @@
 		<div class="genre-items">
 			<% @genres.each do |genre| %>
 				<div class="genre-item">
-					<%= link_to genre.name, genre_path(genre), class: "btn btn-outline-warning btn-original" %>
+					<%= link_to genre.name, genre_path(genre), class: "btn btn-outline-danger btn-outline-orange" %>
 				</div>
 			<% end %>
 		</div>

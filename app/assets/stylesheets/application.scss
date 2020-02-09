@@ -36,6 +36,7 @@ a {
 .main {
 	padding: 30px 0;
 	background-color: #f5f5f5;
+	min-height: 500px;
 }
 input.font-awesome {
   font-family: FontAwesome;
@@ -44,8 +45,20 @@ input.font-awesome {
   text-decoration: inherit;
 }
 // ボタン
-.btn-original {
-  border: 1px solid gray;
+.btn-orange {
+	background-color: #ed6d46;
+
+	&:hover {
+  	background-color: #ed6d46;
+  }
+}
+.btn-outline-orange {
+  border: 1px solid #ed6d46;
+  color: #ed6d46;
+
+  &:hover {
+  	background-color: #ed6d46;
+  }
 }
 // エラーメッセージ
 .error-message {
@@ -67,20 +80,36 @@ input.font-awesome {
 		list-style: none;
 	}
 }
+// ヘッダー
+
+// フッター
+p {
+	text-align: center;
+	line-height: 60px;
+	margin: 0;
+}
 
 
 // home#top
 
 // home#list
+.list-main-visual {
+	background-image: image-url("list-main-visual.jpg");
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 400px;
+}
+
 .search-container {
 	width: 70%;
-	margin: 30px auto;
-	padding: 30px 0;
+	margin: 50px auto;
 
-	h3 {
+		h3 {
 		text-align: center;
 		margin-bottom: 20px;
 	}
+
 	h5, p {
 		text-align: center;
 	}
@@ -202,17 +231,17 @@ input.font-awesome {
   }
 	i {
 	  font-size: 100px;
-	  color: gray;
+	  color: #dcdcdc;
 	  transition: 0.3s ease-out;
-	  position: absolute;
-	  top: 70px;
-	  right: 150px;
+	  line-height: 200px;
+	  display: block;
+	  text-align: center;
 	}
 	i.add {
 	  display: none;
 	  font-size: 50px;
 	  position: absolute;
-	  top: 10px;
+	  top: -60px;
 	  right: 15px;
 	}
 	&:hover {
