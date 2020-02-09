@@ -1,6 +1,16 @@
 <div class="main">
-	<div class="timeline" id="timeline-lists">
-		<%= render 'posts/timeline' %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= render 'layouts/sidebar', genres: @genres %>
+			</div>
+
+			<div class="col-lg-9">
+				<div class="timeline" id="timeline-lists">
+					<%= render 'posts/timeline' %>
+				</div>
+				<%= link_to_next_page @posts, 'more', id: 'tl-more-posts', class: "more-btn", remote: true %>
+			</div>
+		</div>
 	</div>
-	<%= link_to_next_page @posts, 'more', id: 'tl-more-posts', class: "more-btn", remote: true %>
 </div>

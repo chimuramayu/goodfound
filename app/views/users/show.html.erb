@@ -28,7 +28,7 @@
 				<strong><%= link_to @user.favorites.count, favorites_user_path(@user) %></strong>
 			</p>
 			<p><strong><%= link_to @user.followings.count, following_user_path(@user) %></strong> follow</p>
-			<p><strong><%= link_to @user.followers.count, followers_user_path(@user) %></strong> follower</p>
+			<p><strong id="follower_count"><%= link_to @user.followers.count, followers_user_path(@user) %></strong> follower</p>
 		</div>
 		<!-- ユーザーのポスト一覧 -->
 		<div class="post-index" id="user-post-index">

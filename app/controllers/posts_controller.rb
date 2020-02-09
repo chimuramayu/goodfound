@@ -12,6 +12,7 @@ class PostsController < ApplicationController
       timeline_users << following
     end
     @posts = Post.where(user_id: timeline_users).order(id: "DESC").page(params[:page]).per(10)
+    @genres = Genre.all
   end
 
   def new

@@ -1,0 +1,25 @@
+<div class="radio-tile-box">
+	<div class="input-container">
+		<!-- radio-buttonは非表示 -->
+		<%= radio_button_tag :detail, "song", false, class: "radio-button" %>
+		<!-- radio-tileを設置 -->
+		<div class="radio-tile">
+			<i class="fas fa-music"></i>
+			<%= label_tag :detail_song, 'song', class: "radio-tile-label" %>
+		</div>
+	</div>
+	<div class="input-container">
+		<%= radio_button_tag :detail, "album", false, class: "radio-button" %>
+		<div class="radio-tile">
+			<i class="fas fa-compact-disc" for="detail_album" ></i>
+			<%= label_tag :detail_album, 'album', class: "radio-tile-label" %>
+		</div>
+	</div>
+	<div class="input-container">
+		<%= radio_button_tag :detail, "artist", false, class: "radio-button" %>
+		<div class="radio-tile">
+			<i class="fas fa-user-circle"></i>
+			<%= label_tag :detail_artist, 'artist', class: "radio-tile-label" %>
+		</div>
+	</div>
+</div>

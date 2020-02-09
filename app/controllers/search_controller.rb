@@ -3,6 +3,7 @@ class SearchController < ApplicationController
 		@search = params[:search]
 		@detail = params[:detail]
 		@results = results(@search, @detail)
+		@genres = Genre.all
 	end
 
 	def results(search, detail)

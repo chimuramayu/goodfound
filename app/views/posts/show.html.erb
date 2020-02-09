@@ -1,5 +1,6 @@
 <div class="main timeline">
-	<div class="post-box">
+	<div class="container">
+	<div class="post-box col-8 offset-2">
 		<%= render 'posts/post_user', post: @post %>
 
 		<div class="post-content">
@@ -34,7 +35,7 @@
 			<%= link_to post_path(@post) do %>
 				<i class="far fa-comment" id="comment-box"></i>
 			<% end %>
-			<span><%= @post.comments.count %>コメント</span>
+			<span id="comment_count"><%= @post.comments.count %></span>
 		</div>
 
 		<div class="comment-box">

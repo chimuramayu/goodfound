@@ -1,9 +1,19 @@
 <div class="main">
-	<div class="user-page">
-		<h2>検索結果</h2>
-		<p>"<%= @genre.name %>"</p>
-		<div class="post-index">
-			<%= render 'posts/post_index', posts: @posts %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= render 'layouts/sidebar', genres: @genres %>
+			</div>
+
+			<div class="col-lg-9">
+				<div class="user-page">
+					<h2>検索結果</h2>
+					<p>"<%= @genre.name %>"</p>
+					<div class="post-index">
+						<%= render 'posts/post_index', posts: @posts %>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

@@ -29,7 +29,7 @@ $(function(){
       alert("画像ファイルを指定してください。");
       return false;
     }
-    //アップロードした画像を設定する
+    アップロードした画像を設定する
     reader.onload = (function(file){
       return function(e){
         $("#img").attr("src", e.target.result);

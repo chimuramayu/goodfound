@@ -71,6 +71,7 @@ gem 'font-awesome-sass', '~> 5.4.1'
 gem 'kaminari'
 gem 'pry-rails'
 gem 'rails-i18n'
+gem 'carrierwave'
 
 group :production do
   gem 'mysql2'

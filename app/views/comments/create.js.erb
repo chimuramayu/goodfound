@@ -1,4 +1,5 @@
 $("textarea").val("")
 $('#comments-<%= @post.id %>').html("<%= j(render 'comments/comments', post: @post) %>");
-var count = $('#comment_count').text.to_i()
-$('#comment_count').val(count+1)
+var count = $('#comment_count').text()
+Number(count);
+$('#comment_count').text(Number(count)+1)

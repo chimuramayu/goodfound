@@ -1,9 +1,17 @@
 <div class="main">
-	<div class="user-page">
-		<h2>検索結果<span>(<%= @detail %>)</span></h2>
-		<p>"<%= @search %>"</p>
-		<div class="post-index">
-			<%= render 'posts/post_index', posts: @results %>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3">
+				<%= render 'layouts/sidebar', genres: @genres %>
+			</div>
+
+			<div class="user-page col-lg-9">
+				<h2>検索結果<span>(<%= @detail %>)</span></h2>
+				<p>"<%= @search %>"</p>
+				<div class="post-index">
+					<%= render 'posts/post_index', posts: @results %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
