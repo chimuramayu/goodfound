@@ -1,17 +1,17 @@
 <div class="devise-container">
   <div class="input-box">
-    <h4><i class="fas fa-sign-in-alt"></i>
-      <strong>Log in</strong></h4>
+    <h3><i class="fas fa-sign-in-alt"></i>
+      <strong>Log in</strong></h3>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
       <div class="field">
-        <%= f.label :username, "Goodfound ID" %><br />
-        <%= f.text_field :username, autofocus: true, autocomplete: "ユーザーネーム", class: "form-control" %>
+        <%= f.text_field :username, autofocus: true, autocomplete: "Goodfound ID", placeholder: "Goodfound ID", class: "form-control" %>
       </div>
 
       <div class="field">
-        <%= f.label :password, "パスワード" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "パスワード", class: "form-control" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
