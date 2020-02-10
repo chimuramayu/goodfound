@@ -6,41 +6,35 @@
 	<div class="row">
 		<!-- 投稿フォーム -->
 		<div class="col-5 offset-1">
-			<%= f.label :post_image, "画像" %>
 			<div id="img-feild" onClick="$('#file').click()">
 				<% if @post_image.present? %>
-					<%= attachment_image_tag post, :post_image, :fill, 400, 250, id: "img" %>
+					<%= attachment_image_tag post, :post_image, :fill, 350, 250, id: "img" %>
 				<% else %>
-					<%= attachment_image_tag post, :post_image, :fill, 400, 250, id: "img", fallback: "" %>
-					<i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
+					<img id="img">
+						<i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
         <% end %>
       </div>
 			<%= f.attachment_field :post_image, id: "file" %>
 		</div>
 		<div class="col-5">
 			<div class="form-group">
-				<%= f.label :song, "曲" %>
-				<%= f.text_field :song, class: "form-control" %>
+				<%= f.text_field :song, placeholder: "曲", class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :album, "アルバム" %>
-				<%= f.text_field :album, class: "form-control" %>
+				<%= f.text_field :album, placeholder: "アルバム",  class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :artist, "アーティスト" %>
-				<%= f.text_field :artist, class: "form-control" %>
+				<%= f.text_field :artist, placeholder: "アーティスト",  class: "form-control" %>
 			</div>
 			<div class="form-group">
-				<%= f.label :genre_id, "ジャンル" %>
-				<%= f.collection_select :genre_id, Genre.all, :id, :name, :include_blank => "選択してください", class: "form-control" %>
+				<%= f.collection_select :genre_id, Genre.all, :id, :name, {:include_blank => "ジャンルを選択してください"}, {class: "form-control"} %>
 			</div>
 			<div class="form-group">
-				<%= f.label :body, "お気に入りポイント" %>
-				<%= f.text_area :body, class:"form-control", rows: 7 %>
+				<%= f.text_area :body, placeholder: "おきにいりポイント",  class:"form-control", rows: 7 %>
 			</div>
 		</div>
 	</div>
 	<div class="actions">
-		<%= f.submit class: "btn" %>
+		<%= f.submit class: "btn btn-dark" %>
 	</div>
 <% end %>

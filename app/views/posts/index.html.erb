@@ -6,10 +6,11 @@
 			</div>
 
 			<div class="col-lg-9">
+				<h3 class="timeline-headline"><strong>Timeline</strong></h3>
 				<% if @posts.empty? %>
 					<div class="timeline-none">
 						<p>好きな音楽を投稿してみましょう！</p>
-						<%= link_to '投稿する', new_post_path, class: "btn" %>
+						<p><%= link_to '投稿する', new_post_path, class: "btn btn-dark" %></p>
 					</div>
 				<% else %>
 					<div class="timeline" id="timeline-lists">

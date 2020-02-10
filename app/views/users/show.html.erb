@@ -3,6 +3,7 @@
 		<div class="icon-image">
 			<%= attachment_image_tag @user, :icon_image, :fill, 100, 100, fallback: "default-user-image.png", size: "100x100" %>
 		</div>
+
 		<div class="profile-detail">
 			<p class="name">
 				<strong><%= @user.name %></strong>
@@ -14,12 +15,13 @@
 			<% if current_user != @user %>
         <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
     	<% else %>
-				<%= link_to edit_user_path(current_user), class: "btn btn-outline-secoundly" do %>
+				<%= link_to edit_user_path(current_user), class: "btn btn-outline-dark" do %>
 					<i class="fas fa-user-edit"></i>
 				<% end %>
 			<% end %>
 		</div>
 	</div>
+
 	<div class="user-nav">
 		<p><strong><%= @post_count.count %></strong> 投稿</p>
 		<p>

@@ -26,11 +26,12 @@
 	padding: 0;
 }
 
+// リンク
 a {
 	color: #202020;
 
 	&:hover {
-	 color: #202020;
+	color: #202020;
 	 text-decoration: none;
 	}
 }
@@ -41,8 +42,7 @@ p, h1, h2, h3, h4, h5, label {
 
 .main {
 	padding: 30px 0;
-	background-color: #f5f5f5;
-	min-height: 500px;
+	background-color: #faf0e6;
 }
 
 // font awesome
@@ -74,19 +74,20 @@ input.font-awesome {
 	display: block;
 	background-color: #ffffff;
 	border-radius: 10px;
-	box-shadow: 0 0 8px gray;
+	box-shadow: 0 0 8px #dcdcdc;
 	padding: 10px 0;
 	margin: 0 auto;
 	text-align: center;
 
 	&:hover {
-		background-color: #efefef;
+		background-color: #f5f5f5;
+		font-weight: normal;
 	}
 }
 
 // エラーメッセージ
 .error-message {
-	border: thin solid gray;
+	border: thin solid #808080;
 	border-radius: 3px;
 	padding: 15px 7px;
 	margin-bottom: 15px;
@@ -160,36 +161,41 @@ input.font-awesome {
 }
 
 // サイドバー
-	.sidebar {
-		background-color: #ffffff;
-		padding: 30px 10px;
-		border-radius: 10px;
-		text-align: center;
+.sidebar {
+	background-color: #ffffff;
+	padding: 30px 10px;
+	border-radius: 10px;
+	text-align: center;
 
-		.headline {
-			margin-bottom: 15px;
-			font-size: 20px;
-		}
-		.text {
-			margin-top: 10px;
-		}
-		.actions {
-			margin:10px 0 30px;
-		}
-		.genre-item {
-			width: 80%;
-			margin: 4px auto 0;
-			border-bottom: 2px dotted black;
-		}
-		.btn {
-			width: 100%;
+	.headline {
+		margin-bottom: 15px;
+		font-size: 20px;
+	}
+	.text {
+		margin-top: 10px;
+	}
+	.actions {
+		margin:10px 0 30px;
+	}
+	.genre-item {
+		width: 80%;
+		margin: 4px auto 0;
+		border-bottom: 2px dotted black;
+		transition: font-weight .3s;
+
+		&:hover {
+			font-weight: bold;
 		}
 	}
+	.btn {
+		width: 100%;
+	}
+}
 
 // アイコンイメージ
 .icon-image {
 	border-radius: 50%;
-	border: 1px solid gray;
+	border: 1px solid #808080;
 	overflow: hidden;
 }
 
@@ -220,7 +226,7 @@ input.font-awesome {
 footer {
 	p {
 		text-align: center;
-		line-height: 60px;
+		line-height: 40px;
 		margin: 0;
 	}
 }
@@ -231,7 +237,7 @@ footer {
 	background-position: center;
 	background-size: cover;
 	width: 100%;
-	height: 730px;
+	height: 750px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -240,9 +246,12 @@ footer {
 	h1 {
 		font-size: 100px;
 		color: #ffffff;
-		margin-bottom: 300px;
+		font-weight: bolder;
+		-webkit-text-stroke: 1px #d2b48c;
+  	text-stroke: 1px #d2b48c;
 	}
 	.link {
+		font-weight: bold;
 	}
 }
 
@@ -258,7 +267,7 @@ footer {
 
 // home#list
 .list-main-visual {
-	background-image: image-url("list-main-visual.jpg");
+	background-image: image-url("img8.jpg");
 	background-position: center;
 	background-size: cover;
 	width: 100%;
@@ -285,7 +294,7 @@ footer {
 
 			#search {
 				width: 50%;
-				border: thin solid gray;
+				border: thin solid #808080;
 				border-radius: 5px;
 				padding: 5px;
 				margin: 0 auto;
@@ -322,11 +331,12 @@ footer {
 	display: none;
 }
 #img-feild {
+	margin: 0 auto;
   border: solid 1px #ced4da;
   position: relative;
   border-radius: 5px;
   cursor: pointer;
-  width: 400px;
+  width: 350px;
   height: 250px;
   background-color: #fff;
   background-position: center;
@@ -337,7 +347,9 @@ footer {
   transition: 0.3s ease-out;
 
   #img {
-  	width: 100%;
+  	width: 350px;
+  	height: 250px;
+  	object-fit: cover;
   }
 	i {
 	  font-size: 100px;
@@ -366,18 +378,38 @@ footer {
 	}
 }
 .post-form {
-	padding: 30px 0;
+	padding: 40px 0;
+
+	h5 {
+		text-align: center;
+		margin-bottom: 20px;
+	}
 
 	.actions {
+
 		text-align: center;
+
+		.btn {
+			width: 40%;
+		}
 	}
 }
 
 // posts#index
+.timeline-headline {
+	text-align: center;
+	margin-bottom: 10px;
+}
 .timeline {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+.timeline-none {
+	p {
+		text-align: center;
+		line-height: 50px;
+	}
 }
 
 // posts#index, posts#show
@@ -386,7 +418,7 @@ footer {
 	margin-bottom: 20px;
 	padding: 20px 30px;
 	background-color: #ffffff;
-	box-shadow: 0 0 8px gray;
+	box-shadow: 0 0 8px #dcdcdc;
 	border-radius: 10px;
 
 	.post-user {
@@ -405,6 +437,16 @@ footer {
 				}
 			}
 		}
+		.actions {
+			span {
+				padding: 5px;
+
+				&:hover {
+					border: 1px solid #999;
+					border-radius: 3px;
+				}
+			}
+		}
 	}
 
 	.post-content {
@@ -413,6 +455,11 @@ footer {
 
 		.post-image {
 			margin-right: 30px;
+
+			img {
+				border-radius: 5px;
+				overflow: hidden;
+			}
 		}
 		.post-detail {
 			font-size: 20px;
@@ -463,7 +510,7 @@ footer {
 
 			.icon_image {
 				border-radius: 50%;
-				border: 1px solid gray;
+				border: 1px solid #808080;
 				overflow: hidden;
 			}
 			strong {
@@ -513,8 +560,8 @@ footer {
 		}
 	}
 	.user-nav {
-		border-top: 1px solid gray;
-		border-bottom: 1px solid gray;
+		border-top: 1px solid #d2b48c;
+		border-bottom: 1px solid #d2b48c;
 		display: flex;
 		justify-content: center;
 
@@ -523,9 +570,10 @@ footer {
 			flex-basis: 15%;
 			text-align: center;
 			position: relative;
+			transition: background-color .5s;
 
 		&:hover {
-			background-color: lightgray;
+			background-color: #f5deb3;
 		}
 
 			strong {
@@ -536,11 +584,12 @@ footer {
 }
 .user-page {
 	padding: 50px 0;
-	background-color: #fde8d0;
+	background-color: #faf0e6;
 
 	.post-index {
 		width: 70%;
 		margin: 0 auto;
+		min-height: 400px;
 	}
 }
 
@@ -559,7 +608,7 @@ footer {
 		justify-content: center;
 		align-items: center;
 		padding: 5px 0;
-		border-top: thin solid gray;
+		border-top: thin solid #808080;
 
 		&:last-child {
 			margin-bottom: 15px;
@@ -614,7 +663,7 @@ footer {
 // users#show, genres#show, search#search, users#favorites post-index
 .post-index {
 	display: flex;
-	align-content: space-around;
+	align-content: flex-start;
 	flex-wrap: wrap;
 	margin: 30px auto;
 
@@ -622,7 +671,7 @@ footer {
 		display: flex;
 		background-color: #ffffff;
 		border-radius: 5px;
-		box-shadow: 0 0 8px gray;
+		box-shadow: 0 0 8px #dcdcdc;
 		padding: 15px;
 		width: 42%;
 		margin-top: 2%;
@@ -639,10 +688,14 @@ footer {
 			margin-top: 0;
 		}
 		&:hover {
-			background-color: lightgray;
 		}
 		.post-image {
 			margin-right: 15px;
+
+			img {
+				border-radius: 5px;
+				overflow: hidden;
+			}
 		}
 		.post-detail {
 
