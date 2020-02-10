@@ -1,18 +1,17 @@
 <% posts.each do |post| %>
-	<div class="one-post">
-		<%= link_to post_path(post) do %>
-			<div class="post-image">
-				<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
-			</div>
-			<div class="post-content">
-				<% if post.song != nil %>
-					<p><i class="fas fa-music"></i>
-					<strong><%= post.song %></strong></p>
-				<% end %>
-				<% if post.album != nil %>
-					<p><i class="fas fa-compact-disc"></i>
-					<strong><%= post.album %></strong></p>
-				<% end %>
+	<div class="post-content">
+		<%= link_to "", post_path(post) %>
+		<div class="post-image">
+			<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
+		</div>
+		<div class="post-detail">
+			<% if post.song != nil %>
+				<p><i class="fas fa-music"></i>
+				<strong><%= post.song %></strong></p>
+			<% end %>
+			<% if post.album != nil %>
+				<p><i class="fas fa-compact-disc"></i>
+				<strong><%= post.album %></strong></p>
 			<% end %>
 			<p><i class="fas fa-user-circle"></i>
 			<strong><%= post.artist %></strong></p>
