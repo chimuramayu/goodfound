@@ -15,11 +15,10 @@ class User < ApplicationRecord
 
 	attachment :icon_image
 
-	validates :username, uniqueness: true, length: {in: 6..20}, presence: true, format: { with: /\A[a-zA-Z0-9_]+\z/,
+	validates :username, uniqueness: true, length: {in: 6..20}, format: { with: /\A[a-zA-Z0-9_]+\z/,
     message: "は半角英数字と_のみが使えます" }
 	validates :name, length: {maximum: 20}
 	validates :profile, length: {maximum: 200}
-	validates :password, presence: true
 
 	def followed_by?(user)
 		passive_relationships.find_by(following_id: user.id).present?

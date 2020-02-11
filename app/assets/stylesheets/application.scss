@@ -43,6 +43,7 @@ p, h1, h2, h3, h4, h5, label {
 .main {
 	padding: 30px 0;
 	background-color: #faf0e6;
+	min-height: 750px;
 }
 
 // font awesome
@@ -87,17 +88,19 @@ input.font-awesome {
 
 // エラーメッセージ
 .error-message {
-	border: thin solid #808080;
+	border: thin solid #dc143c;
 	border-radius: 3px;
 	padding: 15px 7px;
 	margin-bottom: 15px;
 	background-color: #fff;
+	width: 30%;
+	margin: 0 auto 20px;
 
 	p {
 		margin-bottom: 10px;
 
 		i {
-			color: red;
+			color: #dc143c;
 		}
 	}
 	ul {
@@ -195,8 +198,13 @@ input.font-awesome {
 // アイコンイメージ
 .icon-image {
 	border-radius: 50%;
-	border: 1px solid #808080;
+	border: 1px solid #d3d3d3;
 	overflow: hidden;
+	transition: all .2s;
+
+	&:hover {
+		opacity: 0.9;
+	}
 }
 
 // ホバー時にdiv全体をクリックできる
@@ -210,6 +218,21 @@ input.font-awesome {
 	  left: 0;
 	  width: 100%;
 	  height: 100%;
+	}
+}
+
+// トップページボタン
+#top-page {
+
+	i {
+		font-size: 40px;
+		position: fixed;
+		bottom: 50px;
+		right: 50px;
+
+		&:hover {
+			opacity: 0.8;
+		}
 	}
 }
 
@@ -326,50 +349,38 @@ footer {
 }
 
 // posts#new, post#edit
-
-#file {
-	display: none;
+.post-form {
+	min-height: 700px;
 }
-#img-feild {
+.input-post-image {
 	margin: 0 auto;
-  border: solid 1px #ced4da;
-  position: relative;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 350px;
+	width: 350px;
   height: 250px;
-  background-color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
- 	background-size: contain;
-  overflow: hidden;
-  box-sizing: border-box;
-  transition: 0.3s ease-out;
+	position: relative;
+	border: 1px solid #ced4da;
+	border-radius: 10px;
+	overflow: hidden;
 
+	#file {
+		display: none;
+	}
   #img {
   	width: 350px;
   	height: 250px;
   	object-fit: cover;
-  }
-	i {
-	  font-size: 100px;
-	  color: #dcdcdc;
-	  transition: 0.3s ease-out;
-	  line-height: 200px;
-	  display: block;
-	  text-align: center;
+
+  	&:hover {
+		  background-color: #dcdcdc;
+		  transition: 0.2s ease-out;
+		  opacity: 0.8;
+		}
 	}
 	i.add {
 	  display: none;
 	  font-size: 50px;
 	  position: absolute;
-	  top: -60px;
+	  top: 10px;
 	  right: 15px;
-	}
-	&:hover {
-	  background-color: #dcdcdc;
-	  transition: 0.2s ease-out;
-	  opacity: 0.8;
 	}
 	&:hover i {
 	  transition: 0.2s ease-out;
@@ -452,6 +463,13 @@ footer {
 	.post-content {
 		display: flex;
 		padding: 15px 0;
+		transition: all .3s;
+
+		a {
+			&:hover {
+				opacity: 0.9;
+			}
+		}
 
 		.post-image {
 			margin-right: 30px;
@@ -491,8 +509,11 @@ footer {
     height: 2px;
     margin: 20px 0;
 	}
-	.form-control {
+	#comment-area {
 		width: 70%;
+	}
+	.btn {
+		margin-top: 10px;
 	}
 	.comment-list {
 		border-bottom: 1px solid #d3d3d3;
@@ -508,11 +529,6 @@ footer {
 		.comment-user {
 			display: flex;
 
-			.icon_image {
-				border-radius: 50%;
-				border: 1px solid #808080;
-				overflow: hidden;
-			}
 			strong {
 				font-size: 18px;
 				margin-left: 10px;
@@ -596,6 +612,7 @@ footer {
 // users#following, user#followers
 .follow-container {
 	padding: 30px 0;
+	min-height: 700px;
 
 	h5 {
 		text-align: center;
@@ -642,21 +659,32 @@ footer {
 	.icon {
 		text-align: center;
 
-		.icon-image {
-			width: 250px;
-			height: 250px;
+		#img {
+			width: 230px;
+			height: 230px;
+			object-fit: cover;
+			cursor: pointer;
+			background-color: #fff;
+			transition: all 0.3s;
+
+			&:hover {
+				opacity: 0.9;
+			}
 		}
-		#icon-file {
+		#file {
 			display: none;
 		}
 	}
-	.input-btn {
-	 background-color: lightgray;
-	 border-radius: 5px;
+	.input-form {
+		margin-top: 15px;
 	}
 	.actions {
 		text-align: center;
 		margin-top: 10px;
+
+		.btn {
+			width: 60%;
+		}
 	}
 }
 
@@ -675,6 +703,7 @@ footer {
 		padding: 15px;
 		width: 42%;
 		margin-top: 2%;
+		transition: all .3s;
 
 		&:nth-child(even) {
 			margin-right: 7%;
@@ -688,6 +717,7 @@ footer {
 			margin-top: 0;
 		}
 		&:hover {
+			opacity: 0.8;
 		}
 		.post-image {
 			margin-right: 15px;
@@ -754,6 +784,9 @@ footer {
 		h3, h5 {
 			text-align: center;
 			margin-bottom: 15px;
+		}
+		.error-message {
+			width: 100%;
 		}
 		input {
 			margin-bottom: 15px;

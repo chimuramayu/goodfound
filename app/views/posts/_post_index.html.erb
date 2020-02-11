@@ -4,17 +4,21 @@
 		<div class="post-image">
 			<%= attachment_image_tag post, :post_image, :fill, 170, 170 %>
 		</div>
+
 		<div class="post-detail">
-			<% if post.song != nil %>
+			<% if post.song.present? %>
 				<p><i class="fas fa-music"></i>
 				<strong><%= post.song %></strong></p>
 			<% end %>
-			<% if post.album != nil %>
+
+			<% if post.album.present? %>
 				<p><i class="fas fa-compact-disc"></i>
 				<strong><%= post.album %></strong></p>
 			<% end %>
+
 			<p><i class="fas fa-user-circle"></i>
 			<strong><%= post.artist %></strong></p>
+
 			<p><i class="fas fa-th"></i>
 			<strong><%= post.genre.name %></strong></p>
 		</div>

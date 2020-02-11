@@ -1,3 +1,7 @@
+<% if alert %>
+  <p class="alert alert-error"><%= alert %></p>
+<% end %>
+
 <% if resource.errors.any? %>
   <div class="error-message">
     <p>

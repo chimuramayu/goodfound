@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:show, :edit, :update, :destroy, :following, :followers, :favorites]
+  before_action :ensure_collect_user, only: [:edit, :update]
 
   def show
   	@posts = @user.posts.order(id: "DESC").page(params[:page]).per(20)
@@ -22,11 +23,11 @@ class UsersController < ApplicationController
   end
 
   def following
-    @following = @user.followings.order(id: "DESC").page(params[:page]).per(2)
+    @following = @user.followings.order(id: "DESC").page(params[:page]).per(20)
   end
 
   def followers
-    @followers = @user.followers.order(id: "DESC").page(params[:page]).per(1)
+    @followers = @user.followers.order(id: "DESC").page(params[:page]).per(20)
   end
 
   def favorites
@@ -35,10 +36,16 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :profile, :icon_image)
+    params.require(:user).permit(:username, :name, :profile, :icon_image)
   end
 
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def ensure_collect_user
+    if current_user.id != @user.id
+      redirect_to timeline_path
+    end
   end
 end

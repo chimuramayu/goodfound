@@ -1,27 +1,31 @@
 <div class="main">
 	<div class="container user-edit">
-		<div class="col-4 offset-4">
-			<%= form_for(@user) do |f| %>
-				<!-- エラーメッセージ -->
-				<%= render 'layouts/error_message', post: @user %>
+		<%= form_for(@user) do |f| %>
+			<!-- エラーメッセージ -->
+			<%= render 'layouts/error_message', post: @user %>
+			<div class="col-4 offset-4">
 				<!-- 編集フォーム -->
 				<div class="icon">
-					<%= attachment_image_tag @user, :icon_image, :fill, 250, 250, fallback: "default-user-image.png", class: "icon-image", id: "img" %>
+					<%= attachment_image_tag @user, :icon_image, :fill, 230, 230, fallback: "user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
 					<%= f.attachment_field :icon_image, id: "file" %>
-					<label class="btn input-btn" for="file">アイコンを選択</label>
 				</div>
-				<div class="">
-					<%= f.label :name, "名前" %><br>
-					<%= f.text_field :name, class: "form-control" %>
+
+				<div class="input-form">
+					<%= f.text_field :username, placeholder: "Goodfound ID", class: "form-control" %>
 				</div>
-				<div class="">
-					<%= f.label :profile, "プロフィール" %><br>
-					<%= f.text_area :profile, rows: 8, class: "form-control" %>
+
+				<div class="input-form">
+					<%= f.text_field :name, placeholder: "ニックネーム", class: "form-control" %>
 				</div>
+
+				<div class="input-form">
+					<%= f.text_area :profile, rows: 8, placeholder: "プロフィール", class: "form-control" %>
+				</div>
+
 				<div class="actions">
-					<%= f.submit "更新", class: "btn" %>
+					<%= f.submit "更新", class: "btn btn-dark" %>
 				</div>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 	</div>
 </div>

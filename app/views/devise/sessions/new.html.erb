@@ -4,8 +4,6 @@
       <strong>Log in</strong></h3>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
-
       <div class="field">
         <%= f.text_field :username, autofocus: true, autocomplete: "Goodfound ID", placeholder: "Goodfound ID", class: "form-control" %>
       </div>

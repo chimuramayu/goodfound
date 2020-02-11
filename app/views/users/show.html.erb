@@ -11,12 +11,18 @@
 			</p>
 			<%= @user.profile %>
 		</div>
+
 		<div class="actions">
-			<% if current_user != @user %>
-        <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
-    	<% else %>
-				<%= link_to edit_user_path(current_user), class: "btn btn-outline-dark" do %>
-					<i class="fas fa-user-edit"></i>
+			<!-- ログインしていない場合 -->
+			<% if user_signed_in? %>
+				<!-- ほかのユーザーの場合 -->
+				<% if current_user != @user %>
+	        <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
+	      <!-- ログインしているユーザーの場合 -->
+	    	<% else %>
+					<%= link_to edit_user_path(current_user), class: "btn btn-outline-dark" do %>
+						<i class="fas fa-user-edit"></i>
+					<% end %>
 				<% end %>
 			<% end %>
 		</div>

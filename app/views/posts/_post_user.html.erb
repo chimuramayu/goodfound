@@ -11,6 +11,7 @@
 			<span><%= l post.created_at, format: :long %></span>
 		</p>
 	</div>
+
 	<% if post.user == current_user %>
 		<div class="actions">
 			<span><%= link_to edit_post_path(post) do %>

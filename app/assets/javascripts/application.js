@@ -37,10 +37,19 @@ $(function(){
     })(file);
     reader.readAsDataURL(file);
   });
-});
 
 // ヘッダーの高さ分だけコンテンツを下げる
-$(function() {
-    var height = $("#header").height();
-    $("body").css("margin-top", height);
+  var height = $("#header").height();
+  $("body").css("margin-top", height);
+
+// コメントフォームにフォーカスを当てる
+  $("#comment-area").focus();
+
+// トップページボタン
+  $("#top-page a").on('click', function(){
+    $("body, html").animate({
+      scrollTop: 0
+    }, 800);
+      return false;
+  });
 });

@@ -1,21 +1,17 @@
 <%= form_for(post) do |f| %>
 	<!-- エラーメッセージ -->
-	<div class="col-4 offset-1">
-		<%= render 'layouts/error_message', post: post %>
-	</div>
+	<%= render 'layouts/error_message', post: post %>
+
 	<div class="row">
 		<!-- 投稿フォーム -->
 		<div class="col-5 offset-1">
-			<div id="img-feild" onClick="$('#file').click()">
-				<% if @post_image.present? %>
-					<%= attachment_image_tag post, :post_image, :fill, 350, 250, id: "img" %>
-				<% else %>
-					<img id="img">
-						<i class="fas fa-image"></i><i class="fas fa-file-upload add"></i>
-        <% end %>
-      </div>
-			<%= f.attachment_field :post_image, id: "file" %>
+			<div class="input-post-image">
+				<%= attachment_image_tag post, :post_image, :fill, 350, 250, id: "img", fallback: "post-image.jpeg", onClick: "$('#file').click()" %>
+				<i class="fas fa-file-upload add"></i>
+				<%= f.attachment_field :post_image, id: "file" %>
+			</div>
 		</div>
+
 		<div class="col-5">
 			<div class="form-group">
 				<%= f.text_field :song, placeholder: "曲", class: "form-control" %>
@@ -34,6 +30,7 @@
 			</div>
 		</div>
 	</div>
+
 	<div class="actions">
 		<%= f.submit class: "btn btn-dark" %>
 	</div>
