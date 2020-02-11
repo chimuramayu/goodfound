@@ -1,9 +1,11 @@
-<div class="user-page favorites">
-	<h5><strong>おきにいり</strong></h5>
-	<!-- ユーザーのお気に入り一覧 -->
-	<div class="post-index" id="user-favorites-index">
-		<%= render 'posts/post_index', posts: @favorites %>
+<div class="main favorites">
+	<div class="user-page">
+		<h5><strong>おきにいり</strong></h5>
+		<!-- ユーザーのお気に入り一覧 -->
+		<div class="post-index" id="user-favorites-index">
+			<%= render 'posts/post_index', posts: @favorites %>
+		</div>
+		<!-- もっと見る -->
+		<%= link_to_next_page @favorites, 'more', id: "more-favorites-index", class: "more-btn", remote: true %>
 	</div>
-	<!-- もっと見る -->
-	<%= link_to_next_page @favorites, 'more', id: "more-favorites-index", class: "more-btn", remote: true %>
 </div>

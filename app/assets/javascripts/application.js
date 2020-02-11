@@ -39,8 +39,8 @@ $(function(){
   });
 
 // ヘッダーの高さ分だけコンテンツを下げる
-  var height = $("#header").height();
-  $("body").css("margin-top", height);
+  //var height = $("#header").height();
+  //$("body").css("margin-top", height);
 
 // コメントフォームにフォーカスを当てる
   $("#comment-area").focus();

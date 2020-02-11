@@ -41,9 +41,13 @@ p, h1, h2, h3, h4, h5, label {
 }
 
 .main {
-	padding: 30px 0;
 	background-color: #faf0e6;
-	min-height: 750px;
+}
+
+// 画面サイズ
+.main, .post-form, .follow-container {
+	min-height: 810px;
+	padding: 90px 0 30px;
 }
 
 // font awesome
@@ -82,7 +86,6 @@ input.font-awesome {
 
 	&:hover {
 		background-color: #f5f5f5;
-		font-weight: normal;
 	}
 }
 
@@ -201,9 +204,10 @@ input.font-awesome {
 	border: 1px solid #d3d3d3;
 	overflow: hidden;
 	transition: all .2s;
+	cursor: pointer;
 
 	&:hover {
-		opacity: 0.9;
+		opacity: 0.8;
 	}
 }
 
@@ -218,6 +222,7 @@ input.font-awesome {
 	  left: 0;
 	  width: 100%;
 	  height: 100%;
+	  transition: all .3s;
 	}
 }
 
@@ -238,19 +243,45 @@ input.font-awesome {
 
 // ヘッダー
 #header {
-	position:fixed;
+	position: fixed;
 	top: 0;
   margin: 0;
   width: 100%;
   z-index: 9999;
+
+  .navbar {
+  	background-color: rgba(0,0,0,0.8);
+  }
+
+  .nav-item, .navbar-brand {
+		margin: 0 30px;
+
+		strong {
+			font-size: 23px;
+			color: #fff;
+		}
+
+	  a {
+	  	color: #faf0e6;
+	  	transition: all .3s;
+	  	font-size: 14px;
+
+	  	&:hover {
+	  		font-weight: bold;
+	  	}
+	  }
+  }
 }
 
 // フッター
 footer {
+	background-color: rgba(0,0,0,0.8);
+
 	p {
 		text-align: center;
 		line-height: 40px;
 		margin: 0;
+		color: #faf0e6;
 	}
 }
 
@@ -260,7 +291,7 @@ footer {
 	background-position: center;
 	background-size: cover;
 	width: 100%;
-	height: 750px;
+	height: 810px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -294,7 +325,7 @@ footer {
 	background-position: center;
 	background-size: cover;
 	width: 100%;
-	height: 400px;
+	height: 460px;
 }
 .search-container {
 	width: 70%;
@@ -349,9 +380,6 @@ footer {
 }
 
 // posts#new, post#edit
-.post-form {
-	min-height: 700px;
-}
 .input-post-image {
 	margin: 0 auto;
 	width: 350px;
@@ -389,15 +417,12 @@ footer {
 	}
 }
 .post-form {
-	padding: 40px 0;
-
 	h5 {
 		text-align: center;
 		margin-bottom: 20px;
 	}
 
 	.actions {
-
 		text-align: center;
 
 		.btn {
@@ -464,12 +489,6 @@ footer {
 		display: flex;
 		padding: 15px 0;
 		transition: all .3s;
-
-		a {
-			&:hover {
-				opacity: 0.9;
-			}
-		}
 
 		.post-image {
 			margin-right: 30px;
@@ -546,6 +565,7 @@ footer {
 // users#show
 .user-infomation {
 	background-color: #fff;
+	padding-top: 60px;
 
 	h5 {
 	 text-align: center;
@@ -611,9 +631,6 @@ footer {
 
 // users#following, user#followers
 .follow-container {
-	padding: 30px 0;
-	min-height: 700px;
-
 	h5 {
 		text-align: center;
 		margin-bottom: 15px;
@@ -649,9 +666,12 @@ footer {
 
 // users#favorites
 .favorites {
-	h5 {
-		text-align: center;
-		margin-bottom: 30px;
+	.user-page {
+		padding-top: 0;
+		h5 {
+			text-align: center;
+			margin-bottom: 30px;
+		}
 	}
 }
 // users#edit
@@ -666,13 +686,6 @@ footer {
 			cursor: pointer;
 			background-color: #fff;
 			transition: all 0.3s;
-
-			&:hover {
-				opacity: 0.9;
-			}
-		}
-		#file {
-			display: none;
 		}
 	}
 	.input-form {
@@ -770,7 +783,7 @@ footer {
 	background-size: cover;
 	background-position: center;
 	width: 100%;
-	height: 730px;
+	height: 810px;
 	display: flex;
 	align-items: center;
 	justify-content: center;

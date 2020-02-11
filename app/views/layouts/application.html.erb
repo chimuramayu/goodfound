@@ -10,15 +10,15 @@
   </head>
 
   <header id="header">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg">
       <div class="container">
         <% if user_signed_in? %>
-          <%= link_to timeline_path, class: "navbar-brand navbar-left" do %>
-            Goodfound
+          <%= link_to timeline_path, class: "navbar-brand mr-auto" do %>
+            <strong>Goodfound</strong>
           <% end %>
         <% else %>
-          <%= link_to root_path, class: "navbar-brand" do %>
-            Goodfound
+          <%= link_to root_path, class: "navbar-brand mr-auto" do %>
+            <strong>Goodfound</strong>
           <% end %>
         <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,53 +26,69 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarToggler">
           <% if user_signed_in? %>
-            <ul class="navbar-nav mr-auto navbar-right">
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <%= link_to new_post_path do %>
+                  <i class="fas fa-headphones-alt"></i>
                   投稿する
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to list_path do %>
-                  <strong>音楽を見つける</strong>
+                  <i class="fas fa-search"></i>
+                  音楽を見つける
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to about_path do %>
-                  about
+                  <i class="fas fa-paperclip"></i>
+                  About
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to user_path(current_user) do %>
-                  マイページ
+                  <i class="far fa-user"></i>
+                  My page
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                  ログアウト
+                  <i class="fas fa-sign-out-alt"></i>
+                  Log out
                 <% end %>
               </li>
             </ul>
           <% else %>
-            <ul class="navbar-nav mr-auto navbar-right">
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item">
                 <%= link_to list_path do %>
-                  <strong>音楽を見つける</strong>
+                  <i class="fas fa-search"></i>
+                  音楽を見つける
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to about_path do %>
-                  about
+                  <i class="fas fa-paperclip"></i>
+                  About
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to new_user_session_path do %>
-                  ログイン
+                  <i class="fas fa-sign-in-alt"></i>
+                  Log in
                 <% end %>
               </li>
+
               <li class="nav-item">
                 <%= link_to new_user_registration_path do %>
-                  会員登録
+                  <i class="fas fa-user-plus"></i>
+                  Sign up
                 <% end %>
               </li>
             </ul>
