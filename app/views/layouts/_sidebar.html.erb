@@ -8,7 +8,7 @@
 			<p class="text">カテゴリーを選択</p>
 			<%= render 'layouts/radio_tile' %>
 			<div class="actions">
-				<%= submit_tag '見つける', class: "btn btn-dark" %>
+				<%= button_tag '<i class="fa fa-search"></i> 検索'.html_safe, type: "submit", class: "btn btn-outline-dark" %>
 			</div>
 		<% end %>
 	</div>
