@@ -897,7 +897,6 @@ footer {
 
 // タブレット縦置きサイズ（768px）以下の際に適用される設定
 @media screen and (max-width:768px) {
-
 	// ヘッダー
 	#header {
 	  .nav-item {
@@ -907,13 +906,13 @@ footer {
 
 	// エラーメッセージ
 	.error-message {
-		width: 40%;
+		width: 45%;
 	}
 
 	// サイドバー
-		.sidebar {
-		 display: none;
-		}
+	.sidebar {
+	 display: none;
+	}
 
 	// 画面サイズ
 	.main, .post-form, .follow-container {
@@ -980,6 +979,7 @@ footer {
 			}
 		}
 	}
+
 	// ログイン、サインアップ、パスワード再設定
 	.devise-container {
 		background-image: none;
@@ -1028,59 +1028,28 @@ footer {
 
 	// users#show
 	.user-infomation {
-		padding-top: 80px;
-
-		h5 {
-		 text-align: center;
-		}
 		.profile {
-			padding: 20px;
-			width: 80%;
-			min-height: 130px;
+			width: 100%;
+			padding: 30px 60px;
 
 			img {
-				width: 50px;
-				height: 50px;
-			}
-			.profile-detail {
-				margin-left: 10px;
-				font-size: 13px;
-				.name {
-					font-size: 15px;
-					margin-bottom: 10px;
-
-					span {
-						font-size: 13px;
-					}
-				}
-			}
-			.actions {
-				margin-left: auto;
-
-				.edit-btn {
-					padding: 5px;
-					line-height: 100%;
-
-					i {
-					 font-size: 13px;
-					}
-				}
+				width: 70px;
+				height: 70px;
 			}
 		}
 		.user-nav {
 			p {
-				padding: 10px 0;
-				flex-basis: 25%;
-				font-size: 12px;
+				flex-basis: 20%;
+				font-size: 13px;
 
 				strong {
-					font-size: 15px;
+					font-size: 18px;
 				}
 			}
 		}
 	}
 	.user-page {
-		padding: 20px 0;
+		padding: 30px 0;
 
 		.post-index {
 			width: 100%;
@@ -1117,25 +1086,13 @@ footer {
 	}
 
 	// users#favorites
-	.favorites {
-		.user-page {
-			h5 {
-				margin-bottom: 18px;
-			}
-		}
-	}
 
 	// users#edit
 
 	// users#show, genres#show, search#search, users#favorites post-index
 	.post-index {
-		display: flex;
-		width: 100%;
-
 		.post-content {
 			width: 46%;
-			flex-direction: column;
-			padding: 10px;
 
 			&:nth-child(even) {
 				margin-right: 3%;
@@ -1146,7 +1103,6 @@ footer {
 				margin-left: 3%;
 			}
 			.post-image {
-				margin-right: 0;
 				text-align: center;
 			}
 			img {
@@ -1154,14 +1110,8 @@ footer {
 				height: 150px;
 			}
 			.post-detail {
-
 				p {
-					margin-bottom: 5px;
-					font-size: 13px;
-
-					&:last-child {
-						margin-bottom: 0px;
-					}
+					font-size: 14px;
 				}
 			}
 		}
@@ -1185,19 +1135,13 @@ footer {
 		}
 	}
 	.results {
-		padding-top: 10px;
+		padding: 10px 0 0 0;
+
 		.headline, .item-name {
-			margin: 0;
+			margin-right: 0;
 		}
 		.headline {
-			font-size: 15px;
-
-			span {
-				font-size: 13px;
-			}
-		}
-		.item-name {
-			font-size: 13px;
+			font-size: 20px;
 		}
 		.post-none {
 			line-height: 80px;
@@ -1211,35 +1155,24 @@ footer {
 
 // スマートフォンサイズ（425px）以下の際に適用される設定
 @media screen and (max-width:425px) {
-	// all
-
 	// ヘッダー
 	#header {
-	  .nav-item {
-	  	margin: 0 10px;
-
-	  	a {
-		  	font-size: 16px;
-		  }
+  	a {
+	  	font-size: 16px;
 	  }
 	  .navbar-brand {
 			margin: 0 10px;
-	  }
+	 	}
+	 }
+
+	// サイドバー
+	.sidebar {
+		display: none;
 	}
 
 	// トップページボタン
 	#top-page {
 		display: none;
-	}
-
-	// home#top
-	.top-main-visual {
-		background-image: image-url("top-image2.jpg");
-		height: 95vh;
-
-		h1 {
-			font-size: 60px;
-		}
 	}
 
 	// エラーメッセージ
@@ -1252,13 +1185,20 @@ footer {
 		padding: 70px 0 15px;
 	}
 
+	// home#top
+	.top-main-visual {
+		background-image: image-url("top-image2.jpg");
+		height: 95vh;
+
+		h1 {
+			font-size: 60px;
+		}
+	}
+
 	// home#about
 	.about-content {
 		padding-top: 90px;
 
-		h2, h3, .main-text, .detail {
-			margin-bottom: 15px;
-		}
 		.about-main-content {
 			width: 90%;
 
@@ -1280,14 +1220,15 @@ footer {
 		.how-to-use {
 			padding: 20px;
 
+			.detail {
+				width: 100%;
+			}
+
 			p {
 			font-size: 18px;
 			}
 			span {
 				font-size: 13px;
-			}
-			.message {
-				padding: 15px 0;
 			}
 		}
 	}
@@ -1301,55 +1242,18 @@ footer {
 		margin: 20px auto;
 
 		h3 {
-			mrgin-bottom: 15px;
-			font-size: 25px;
-		}
-		h5 {
-			margin-bottom: 10px;
-		}
-		p {
-		 font-size: 14px;
-		}
-		.keyword-search {
-			.search-bar {
-				#search {
-					width: 90%;
-				}
-			}
+			margin-bottom: 15px;
+			font-size: 20px;
 		}
 		.genre-search {
 			margin-top: 30px;
-
-			.genre-items {
-				width: 100%;
-
-				.genre-item {
-					margin: 5px 5px 0 0;
-				}
-			}
 		}
 	}
 
 	// ログイン、サインアップ、パスワード再設定
 	.devise-container {
-		background-image: none;
-		background-color: #faf0e6;
-		width: 100%;
-		height: 770px;
-
 		.input-box {
 			width: 90%;
-
-			h3, h5 {
-				text-align: center;
-				margin-bottom: 15px;
-			}
-			input {
-				margin-bottom: 15px;
-			}
-			span {
-				font-size: 13px;
-			}
 		}
 	}
 
@@ -1357,12 +1261,10 @@ footer {
 	.input-post-image {
 		width: 280px;
 	  height: 200px;
-	  margin-bottom: 20px;
 
 	  #img {
 	  	width: 280px;
 	  	height: 200px;
-	  	object-fit: cover;
 		}
 	}
 	.post-form {
@@ -1375,17 +1277,13 @@ footer {
 
 	// posts#index
 	.timeline {
-		 	.actions {
-		 		display: none;
-		 	}
-		}
+	 	.actions {
+	 		display: none;
+	 	}
+	}
 
 	// posts#index, posts#show
 	.post-box {
-		width: 90%;
-		margin-bottom: 20px;
-		padding: 10px 20px;
-
 		.icon-image, fallback {
 			width: 50px;
 			height: 50px;
@@ -1407,53 +1305,24 @@ footer {
 				}
 			}
 		}
-
 		.post-content {
-			display: flex;
-			padding: 15px 0;
 			flex-direction: column;
 
-			.post-detail {
-				font-size: 20px;
-
-				p {
-					margin-bottom: 5px;
-				}
-
-				span {
-					font-size: 17px;
-				}
+			p {
+				margin-bottom: 5px;
 			}
-		}
-		.reactions {
-			font-size: 17px;
-
-			.comment {
-				margin-left: 10px;
+			span {
+				font-size: 15px;
 			}
 		}
 	}
 
 	// posts#show
-	.post-show {
-		.post-content {
-
-			img {
-				width: 300px;
-				height: 200px;
-				margin-bottom: 10px;
-			}
-		}
-	}
 	.comment-box {
-		#comment-area {
-			width: 100%;
-		}
 		.comment-list {
 			padding: 5px 0;
 
 			.comment-user {
-
 				strong {
 					font-size: 14px;
 				}
@@ -1463,11 +1332,6 @@ footer {
 
 	// users#show
 	.user-infomation {
-		padding-top: 60px;
-
-		h5 {
-		 text-align: center;
-		}
 		.profile {
 			padding: 20px;
 			width: 100%;
@@ -1490,8 +1354,6 @@ footer {
 				}
 			}
 			.actions {
-				margin-left: auto;
-
 				.edit-btn {
 					padding: 5px;
 					line-height: 100%;
@@ -1518,7 +1380,6 @@ footer {
 		padding: 20px 0;
 
 		.post-index {
-			width: 100%;
 			min-height: 500px;
 		}
 	}
@@ -1555,9 +1416,6 @@ footer {
 				&:nth-child(2) {
 					flex-basis: 40%;
 				}
-				&:first-child, &:last-child {
-					flex-basis: 15%
-				}
 			}
 		}
 	}
@@ -1575,32 +1433,15 @@ footer {
 
 	// users#show, genres#show, search#search, users#favorites post-index
 	.post-index {
-		display: flex;
-		width: 100%;
-
 		.post-content {
 			width: 46%;
 			flex-direction: column;
 			padding: 10px;
 
-			&:nth-child(even) {
-				margin-right: 3%;
-				margin-left: 1%;
-			}
-			&:nth-child(odd) {
-				margin-right: 1%;
-				margin-left: 3%;
-			}
 			.post-image {
 				margin-right: 0;
-				text-align: center;
-			}
-			img {
-				width: 150px;
-				height: 150px;
 			}
 			.post-detail {
-
 				p {
 					margin-bottom: 5px;
 					font-size: 13px;
@@ -1614,24 +1455,9 @@ footer {
 	}
 
 	// search#search, genre#show
-	#search-index {
-		margin: 0;
-
-		.post-content {
-				width: 49%;
-
-			&:nth-child(even) {
-				margin-right: 0;
-				margin-left: 1%;
-			}
-			&:nth-child(odd) {
-				margin-right: 1%;
-				margin-left: 0;
-			}
-		}
-	}
 	.results {
 		padding-top: 10px;
+
 		.headline, .item-name {
 			margin: 0;
 		}
@@ -1644,13 +1470,6 @@ footer {
 		}
 		.item-name {
 			font-size: 13px;
-		}
-		.post-none {
-			line-height: 80px;
-			text-align: center;
-		}
-		.more-btn {
-			margin-left: 0;
 		}
 	}
 }
