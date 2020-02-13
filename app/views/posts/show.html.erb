@@ -1,58 +1,60 @@
 <div class="main">
 	<div class="container">
-		<div class="post-box col-8 offset-2">
-			<%= render 'posts/post_user', post: @post %>
+		<div class="row justify-content-center post-show">
+			<div class="post-box col-lg-8">
+				<%= render 'posts/post_user', post: @post %>
 
-			<div class="post-content">
-				<div class="post-image">
-					<%= attachment_image_tag @post, :post_image, :fill, 350, 250  %>
-				</div>
-
-				<div class="post-detail">
-					<% if @post.song.present? %>
-						<p><i class="fas fa-music"></i>
-						<strong><%= @post.song %></strong></p>
-					<% end %>
-
-					<% if @post.album.present? %>
-						<p><i class="fas fa-compact-disc"></i>
-						<strong><%= @post.album %></strong></p>
-					<% end %>
-
-					<p><i class="fas fa-user-circle"></i>
-					<strong><%= @post.artist %></strong></p>
-
-					<% if @post.genre.name.present? %>
-						<p><i class="fas fa-th"></i><strong><%= @post.genre.name %></strong></p>
-					<% end %>
-
-					<p><span><%= @post.body %></span></p>
-				</div>
-			</div>
-
-			<% if user_signed_in? %>
-				<div class="reactions">
-					<span id="favorite-button-<%= @post.id %>">
-						<%= render 'favorites/favorite', post: @post %>
-					</span>
-
-					<%= link_to post_path(@post) do %>
-						<i class="far fa-comment" id="comment-box"></i>
-					<% end %>
-					<span id="comment_count"><%= @post.comments.count %></span>
-				</div>
-
-				<div class="comment-box">
-					<div id="comments-<%= @post.id %>">
-						<%= render 'comments/comments', post: @post %>
+				<div class="post-content">
+					<div class="post-image">
+						<%= attachment_image_tag @post, :post_image, :fill, 350, 250, size: "350x250"  %>
 					</div>
 
-					<%= form_with(model: [@post, @comment]) do |f| %>
-						<%= f.text_area :comment, class: "form-control", id: "comment-area", placeholder: "コメント" %>
-						<%= f.submit "送信", class: "btn btn-sm btn-dark" %>
-					<% end %>
+					<div class="post-detail">
+						<% if @post.song.present? %>
+							<p><i class="fas fa-music"></i>
+							<strong><%= @post.song %></strong></p>
+						<% end %>
+
+						<% if @post.album.present? %>
+							<p><i class="fas fa-compact-disc"></i>
+							<strong><%= @post.album %></strong></p>
+						<% end %>
+
+						<p><i class="fas fa-user-circle"></i>
+						<strong><%= @post.artist %></strong></p>
+
+						<% if @post.genre.name.present? %>
+							<p><i class="fas fa-th"></i><strong><%= @post.genre.name %></strong></p>
+						<% end %>
+
+						<p><span><%= @post.body %></span></p>
+					</div>
 				</div>
-			<% end %>
+
+				<% if user_signed_in? %>
+					<div class="reactions">
+						<span id="favorite-button-<%= @post.id %>">
+							<%= render 'favorites/favorite', post: @post %>
+						</span>
+
+						<%= link_to post_path(@post), class: "comment" do %>
+							<i class="far fa-comment" id="comment-box"></i>
+						<% end %>
+						<span id="comment_count"><%= @post.comments.count %></span>
+					</div>
+
+					<div class="comment-box">
+						<div id="comments-<%= @post.id %>">
+							<%= render 'comments/comments', post: @post %>
+						</div>
+
+						<%= form_with(model: [@post, @comment]) do |f| %>
+							<%= f.text_area :comment, class: "form-control", id: "comment-area", placeholder: "コメント" %>
+							<%= f.submit "送信", class: "btn btn-sm btn-dark" %>
+						<% end %>
+					</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

@@ -20,7 +20,7 @@
 	        <span id="follow-button-<%= @user.id %>"><%= render 'relationships/follow', user: @user %></span>
 	      <!-- ログインしているユーザーの場合 -->
 	    	<% else %>
-					<%= link_to edit_user_path(current_user), class: "btn btn-outline-dark" do %>
+					<%= link_to edit_user_path(current_user), class: "btn btn-outline-dark edit-btn" do %>
 						<i class="fas fa-user-edit"></i>
 					<% end %>
 				<% end %>

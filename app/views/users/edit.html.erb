@@ -3,29 +3,31 @@
 		<%= form_for(@user) do |f| %>
 			<!-- エラーメッセージ -->
 			<%= render 'layouts/error_message', post: @user %>
-			<div class="col-4 offset-4">
-				<!-- 編集フォーム -->
-				<div class="icon">
-					<%= attachment_image_tag @user, :icon_image, :fill, 230, 230, fallback: "user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
-					<%= f.attachment_field :icon_image, id: "file" %>
-				</div>
+			<div class="row justify-content-around">
+				<div class="col-lg-4">
+					<!-- 編集フォーム -->
+					<div class="icon">
+						<%= attachment_image_tag @user, :icon_image, :fill, 230, 230, fallback: "user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
+						<%= f.attachment_field :icon_image, id: "file" %>
+					</div>
 
-				<div class="input-form">
-					<%= f.text_field :username, placeholder: "Goodfound ID", class: "form-control" %>
-				</div>
+					<div class="input-form">
+						<%= f.text_field :username, placeholder: "Goodfound ID", class: "form-control" %>
+					</div>
 
-				<div class="input-form">
-					<%= f.text_field :name, placeholder: "ニックネーム", class: "form-control" %>
-				</div>
+					<div class="input-form">
+						<%= f.text_field :name, placeholder: "ニックネーム", class: "form-control" %>
+					</div>
 
-				<div class="input-form">
-					<%= f.text_area :profile, rows: 8, placeholder: "プロフィール", class: "form-control" %>
-				</div>
+					<div class="input-form">
+						<%= f.text_area :profile, rows: 8, placeholder: "プロフィール", class: "form-control" %>
+					</div>
 
-				<div class="actions">
-					<%= f.submit "更新", class: "btn btn-dark" %>
+					<div class="actions">
+						<%= f.submit "更新", class: "btn btn-dark" %>
+					</div>
 				</div>
-			</div>
-		<% end %>
+			<% end %>
+		</div>
 	</div>
 </div>

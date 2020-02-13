@@ -2,17 +2,17 @@
 	<!-- エラーメッセージ -->
 	<%= render 'layouts/error_message', post: post %>
 
-	<div class="row">
+	<div class="row justify-content-center">
 		<!-- 投稿フォーム -->
-		<div class="col-5 offset-1">
+		<div class="col-lg-5">
 			<div class="input-post-image">
-				<%= attachment_image_tag post, :post_image, :fill, 350, 250, id: "img", fallback: "post-image.jpeg", onClick: "$('#file').click()" %>
+				<%= attachment_image_tag post, :post_image, :fill, 350, 250, id: "img", fallback: "post-image.jpg", onClick: "$('#file').click()" %>
 				<i class="fas fa-file-upload add"></i>
 				<%= f.attachment_field :post_image, id: "file" %>
 			</div>
 		</div>
 
-		<div class="col-5">
+		<div class="col-lg-5">
 			<div class="form-group">
 				<%= f.text_field :song, placeholder: "曲", class: "form-control" %>
 			</div>
@@ -26,7 +26,7 @@
 				<%= f.collection_select :genre_id, Genre.all, :id, :name, {:include_blank => "ジャンルを選択してください"}, {class: "form-control"} %>
 			</div>
 			<div class="form-group">
-				<%= f.text_area :body, placeholder: "おきにいりポイント",  class:"form-control", rows: 7 %>
+				<%= f.text_area :body, placeholder: "おきにいりポイント",  class:"form-control", rows: 4 %>
 			</div>
 		</div>
 	</div>
