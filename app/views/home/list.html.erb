@@ -3,7 +3,7 @@
 <div class="search-container">
 	<h3><strong>音楽を見つける</strong></h3>
 	<div class="keyword-search">
-		<h5><strong>●●● キーワード検索 ●●●</strong></h5>
+		<h5><i class="fa fa-search"></i> <strong>キーワード検索</strong></h5>
 		<p>好きなキーワードで音楽を見つけることができます。カテゴリーで絞るとさらに詳細検索ができます。</p>
 		<!-- 曲、アルバム、アーティストの検索窓 -->
 		<%= form_tag(search_path, method: :get) do %>
@@ -19,7 +19,7 @@
 	</div>
 	<!-- ジャンル検索 -->
 	<div class="genre-search">
-		<h5><strong>●●● ジャンル検索 ●●●</strong></h5>
+		<h5><i class="fas fa-th"></i> <strong>ジャンル検索</strong></h5>
 		<p>ジャンル別で音楽を見つけることができます。</p>
 		<div class="genre-items">
 			<% @genres.each do |genre| %>

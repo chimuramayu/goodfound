@@ -6,7 +6,11 @@
 			</div>
 
 			<div class="results col-lg-9">
-				<h4 class="headline">検索結果<span>(<%= @detail %>)</span></h4>
+				<h4 class="headline">検索結果
+					<% if @detail.present? %>
+						<span>(<%= @detail %>)</span>
+					<% end %>
+				</h4>
 				<p class="item-name">"<strong><%= @search %></strong>"</p>
 				<% if @results.empty? %>
 					<div class="post-none">該当する投稿がありませんでした</div>

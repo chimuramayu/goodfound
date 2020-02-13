@@ -4,10 +4,10 @@
 			<!-- エラーメッセージ -->
 			<%= render 'layouts/error_message', post: @user %>
 			<div class="row justify-content-around">
-				<div class="col-lg-4 col-sm-7">
+				<div class="col-lg-4 col-sm-7 col-10">
 					<!-- 編集フォーム -->
 					<div class="icon">
-						<%= attachment_image_tag @user, :icon_image, size: "230x230", fallback: "user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
+						<%= attachment_image_tag @user, :icon_image, size: "230x230", fallback: "default-user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
 						<%= f.attachment_field :icon_image, id: "file" %>
 					</div>
 
