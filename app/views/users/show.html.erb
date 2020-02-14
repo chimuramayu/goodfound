@@ -1,4 +1,5 @@
-<div class="user-infomation">
+<div class="user-show">
+	<div class="user-infomation">
 	<div class="profile">
 		<div class="icon-image">
 			<%= attachment_image_tag @user, :icon_image, size: "100x100", fallback: "default-user-image.png" %>
@@ -51,4 +52,5 @@
 	</div>
 	<!-- もっと見る -->
 	<%= link_to_next_page @posts, 'more', id: "more-user-post-index", class: "more-btn", remote: true %>
+</div>
 </div>
