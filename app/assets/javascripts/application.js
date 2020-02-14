@@ -48,4 +48,9 @@ $(function(){
     }, 800);
       return false;
   });
+
+// トップページのタイトル
+  $('.top-main-visual h1').hide().fadeIn('slow', function(){
+    $('.link').hide().fadeIn('slow');
+  });
 });

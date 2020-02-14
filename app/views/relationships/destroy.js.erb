@@ -1,5 +1,4 @@
 $('#follow-button-<%= @user.id %>').html("<%= j(render 'relationships/follow', user: @user) %>");
 var count = $('#follower_count').text()
-console.log(count)
 Number(count);
 $('#follower_count').text(Number(count)-1)

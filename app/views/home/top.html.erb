@@ -1,7 +1,9 @@
 <div class="top-main-visual">
 	<h1>Goodfound</h1>
 	<div class="link">
-		<%= link_to "音楽を見つける", list_path, class: "btn btn-outline-light" %>
-		<%= link_to "Log in", new_user_session_path, class: "btn btn-outline-light" %>
-	</div>
+			<%= link_to "音楽を見つける", list_path, class: "btn btn-outline-light" %>
+			<%= link_to new_user_session_path, class: "btn btn-outline-light" do %>
+				<i class="fas fa-sign-in-alt"></i> Log in
+			<% end %>
+				</div>
 </div>
