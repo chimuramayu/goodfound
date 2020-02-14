@@ -17,17 +17,25 @@
 
 						<% if @post.album.present? %>
 							<p><i class="fas fa-compact-disc"></i>
-							<strong><%= @post.album %></strong></p>
+							<strong> <%= @post.album %></strong></p>
 						<% end %>
 
 						<p><i class="fas fa-user-circle"></i>
-						<strong><%= @post.artist %></strong></p>
+						<strong> <%= @post.artist %></strong></p>
 
 						<% if @post.genre.name.present? %>
-							<p><i class="fas fa-th"></i><strong><%= @post.genre.name %></strong></p>
+							<p><i class="fas fa-th"></i><strong> <%= @post.genre.name %></strong></p>
 						<% end %>
 
-						<p><span><%= @post.body %></span></p>
+						<% if @post.url.present? %>
+							<p><span class="url"><i class="fas fa-link"></i>
+								 <%= raw Rinku.auto_link(h(@post.url)) %></span></p>
+						<% end %>
+
+						<% if @post.body.present? %>
+							<p><span><i class="fas fa-highlighter"></i> <%= @post.body %><span></p>
+						<% end %>
+
 					</div>
 				</div>
 

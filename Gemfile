@@ -72,6 +72,7 @@ gem 'kaminari'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'carrierwave'
+gem 'rinku'
 
 group :production do
   gem 'mysql2'

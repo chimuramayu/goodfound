@@ -4,7 +4,7 @@
 
 	<div class="row justify-content-center">
 		<!-- 投稿フォーム -->
-		<div class="col-lg-5 col-md-7">
+		<div class="col-lg-5 col-md-7 col-11">
 			<div class="input-post-image">
 				<%= attachment_image_tag post, :post_image, size: "350x250", id: "img", fallback: "post-image.jpg", onClick: "$('#file').click()" %>
 				<i class="fas fa-file-upload add"></i>
@@ -12,7 +12,7 @@
 			</div>
 		</div>
 
-		<div class="col-lg-5 col-md-7">
+		<div class="col-lg-5 col-md-7 col-11">
 			<div class="form-group">
 				<%= f.text_field :song, placeholder: "曲", class: "form-control" %>
 			</div>
@@ -24,6 +24,9 @@
 			</div>
 			<div class="form-group">
 				<%= f.collection_select :genre_id, Genre.all, :id, :name, {:include_blank => "ジャンルを選択してください"}, {class: "form-control"} %>
+			</div>
+			<div class="form-group">
+				<%= f.text_area :url, placeholder: "おすすめのYoutubeの動画やSpotifyの曲などのリンクを貼ってください",  class: "form-control" %>
 			</div>
 			<div class="form-group">
 				<%= f.text_area :body, placeholder: "おきにいりポイント",  class:"form-control", rows: 4 %>

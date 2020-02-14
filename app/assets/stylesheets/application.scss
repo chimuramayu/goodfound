@@ -250,6 +250,11 @@ input.font-awesome {
 	}
 }
 
+// form
+input::placeholder, textarea::placeholder {
+	font-size: 0.8rem;
+}
+
 // ヘッダー
 #header {
 	position: fixed;
@@ -588,6 +593,18 @@ footer {
 }
 
 // posts#show
+.post-show {
+	.post-box {
+		margin-bottom: 0;
+
+		.post-content {
+			a {
+				display: inline;
+		  	position: static;
+			}
+		}
+	}
+}
 .comment-box {
 	&:before {
 		content: '';
@@ -921,7 +938,7 @@ footer {
 
 	// 画面サイズ
 	.main, .post-form, .follow-container {
-		padding: 80px 0 15px;
+		padding: 80px 0 20px;
 	}
 
 	// home#top
@@ -1185,11 +1202,6 @@ footer {
 		width: 100%;
 	}
 
-	// 画面サイズ
-	.main, .post-form, .follow-container {
-		padding: 70px 0 15px;
-	}
-
 	// home#top
 	.top-main-visual {
 		background-image: image-url("top-image2.jpg");
@@ -1268,11 +1280,11 @@ footer {
 
 	// posts#new, post#edit
 	.input-post-image {
-		width: 280px;
+		width: 270px;
 	  height: 200px;
 
 	  #img {
-	  	width: 280px;
+	  	width: 270px;
 	  	height: 200px;
 		}
 	}
@@ -1286,6 +1298,9 @@ footer {
 
 	// posts#index
 	.timeline {
+		.post-box {
+			padding: 10px;
+		}
 	 	.actions {
 	 		display: none;
 	 	}
@@ -1336,6 +1351,9 @@ footer {
 				}
 				span {
 					font-size: 14px;
+				}
+				.url {
+					word-break: break-all;
 				}
 			}
 		}
