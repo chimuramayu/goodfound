@@ -18,13 +18,13 @@
 
 		<div class="follow">
 			<%= link_to followers_user_path(user) do %>
-				<p id="follower_count"><%= user.followers.count %></p> <span>フォロワー</span>
+				<p id="follower_count_<%= user.id %>"><%= user.followers.count %></p> <span>フォロワー</span>
 			<% end %>
 		</div>
 
 		<div class="actions">
-			<% if user_signed_in? %>
-				<span id="follow-button-<%= user.id %>"><%= render 'relationships/follow', user: user %></span>
+			<% if user_signed_in? && current_user.id != user.id %>
+					<span id="follow-button-<%= user.id %>"><%= render 'relationships/follow', user: user %></span>
 			<% end %>
 	  </div>
 	</div>
