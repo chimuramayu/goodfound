@@ -1,24 +1,63 @@
-# README
+# Goodfound
+ 
+Goodfoundは「お気に入りの音楽を見つけよう」をコンセプトにした、音楽に特化したSNSです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+好きな音楽の投稿をしたり、気になる音楽を探したりすることができます。
+ 
+## Features
 
-Things you may want to cover:
+* **音楽投稿機能**  
 
-* Ruby version
+  お気に入りの音楽を投稿できます。
 
-* System dependencies
+  リンクがはれるようになっており、外部サイトにつなげることが可能です。
 
-* Configuration
+* **音楽を見つける機能**  
 
-* Database creation
+  キーワード、ジャンルから投稿が検索できます。
 
-* Database initialization
+  またカテゴリーを絞って詳細に検索も可能です。
 
-* How to run the test suite
+* **フォロー機能**  
 
-* Services (job queues, cache servers, search engines, etc.)
+  気になるユーザーをフォローすることができます。
 
-* Deployment instructions
+  フォローしたユーザーの投稿はタイムラインでリアルタイムに確認できます。
 
-* ...
+* **お気に入り機能**  
+
+  ユーザーの投稿にお気に入りができます。
+
+  お気に入りした投稿はお気に入り一覧から見ることができます。
+
+* **コメント機能**  
+
+  投稿にコメントができ、投稿したユーザーとコミュニケーションをとることができます。
+ 
+## Requirement
+
+* ruby 2.5.7 
+* rails 5.2.4.1
+* gem devise
+* gem bootstrap
+* gem jquery-rails
+* gem refile
+* gem refile-mini_magick
+* gem font-awesome-sass
+* gem kaminari
+* gem rails-i18n
+* gem rinku
+ 
+## Installation
+
+$ git clone https://github.com/chimuramayu/goodfound
+ 
+## Note
+
+* 現在投稿時に使用できるファイルは画像のみです。
+
+* レスポンシブは、タブレット縦置きサイズ（768px）以下、スマートフォンサイズ（425px）以下のみに対応しています。
+  
+## Author
+
+mayu chimura
