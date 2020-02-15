@@ -23,7 +23,7 @@ class SearchController < ApplicationController
 					Post.where("album LIKE?", "%#{search}%")
 				end
 			elsif @detail == "artist"
-				if @search
+				if @search.blank?
 					Post.where.not(artist: "")
 				else
 					Post.where("artist LIKE?", "%#{search}%")

@@ -41,7 +41,7 @@
 			<strong><%= @user.followings.count %></strong> follow</p>
 		<p>
 			<%= link_to "", followers_user_path(@user) %>
-			<strong id="follower_count"><%= @user.followers.count %></strong> follower
+			<strong id="follower_count_<%= @user.id %>"><%= @user.followers.count %></strong> follower
 		</p>
 	</div>
 </div>
