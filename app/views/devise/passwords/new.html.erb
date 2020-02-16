@@ -1,7 +1,7 @@
 <div class="devise-container">
 	<div class="input-box">
-		<h5><i class="fas fa-key"></i>パスワードをお忘れですか？</h5>
-		<span>会員登録時に登録されたメールアドレスを入力してください。パスワード再設定ページへのメールをお送りします。</span>
+		<h5 class="password-confirm"><i class="fas fa-key"></i>パスワードをお忘れですか？</h5>
+		<p>会員登録時に登録されたメールアドレスを<br>入力してください。パスワード再設定ページ<br>へのメールをお送りします。</p>
 
 		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
 		  <%= render "devise/shared/error_messages", resource: resource %>
@@ -11,7 +11,7 @@
 		  </div>
 
 		  <div class="actions">
-		    <%= f.submit "送信", class: "btn btn-outline-primary" %>
+		    <%= f.submit "送信", class: "btn-original" %>
 		  </div>
 		<% end %>
 

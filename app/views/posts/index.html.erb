@@ -6,7 +6,12 @@
 			</div>
 
 			<div class="col-lg-9">
-				<h3 class="timeline-headline"><strong>Timeline</strong></h3>
+				<h3 class="timeline-headline">
+					<strong>Timeline</strong>
+					<%= link_to timeline_path do %>
+						<i class="fas fa-redo-alt"></i>
+					<% end %>
+				</h3>
 				<% if @posts.empty? %>
 					<div class="timeline-none">
 						<p>好きな音楽を投稿してみましょう！</p>

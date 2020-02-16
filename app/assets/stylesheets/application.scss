@@ -348,6 +348,9 @@ footer {
 }
 
 // home#about
+.br-sp, .br-md {
+	display: none;
+}
 .about-content {
 	padding-top: 90px;
 
@@ -380,7 +383,7 @@ footer {
 		text-align: center;
 
 		p {
-			margin-bottom: 5px;
+			margin-bottom: 10px;
 			font-weight: bold;
 			font-size: 20px;
 		}
@@ -507,8 +510,19 @@ footer {
 
 // posts#index
 .timeline-headline {
-	text-align: center;
+	width: 80%;
+	margin: 0 auto;
 	margin-bottom: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	position: relative;
+
+	a {
+		font-size: 18px;
+		position: absolute;
+		right: 20px;
+	}
 }
 .timeline {
 	display: flex;
@@ -910,7 +924,7 @@ footer {
 		border-radius: 10px;
 		padding: 15px;
 
-		h3, h5 {
+		h3, h5, p {
 			text-align: center;
 			margin-bottom: 15px;
 		}
@@ -923,7 +937,7 @@ footer {
 		.btn-original {
 			width: 100%;
 		}
-		span {
+		p, span {
 			font-size: 13px;
 		}
 	}
@@ -961,8 +975,13 @@ footer {
 	}
 
 	// home#about
+	.br-sp {
+		display: none;
+	}.br-md {
+		display: block;
+	}
 	.about-content {
-		h2, h3, .main-text, .detail {
+		h2, h3, .main-text {
 			margin-bottom: 15px;
 		}
 		.about-main-content {
@@ -977,10 +996,11 @@ footer {
 		.how-to-use {
 			.detail {
 				width: 70%;
-				margin: 0 auto;
+				margin: 15px auto;
 			}
 		}
 	}
+
 
 	// home#list
 	.list-main-visual {
@@ -1030,6 +1050,12 @@ footer {
 	}
 
 	// posts#index
+	.timeline-headline {
+		width: 90%;
+		a {
+			right: 10px;
+		}
+	}
 
 	// posts#index, posts#show
 	.post-box {
@@ -1232,6 +1258,12 @@ footer {
 	}
 
 	// home#about
+	.br-md {
+		display: none;
+	}
+	.br-sp {
+		display: block;
+	}
 	.about-content {
 		padding-top: 90px;
 
@@ -1294,6 +1326,9 @@ footer {
 	.devise-container {
 		.input-box {
 			width: 80%;
+		}
+		.password-confirm {
+			font-size: 18px;
 		}
 	}
 
@@ -1475,6 +1510,9 @@ footer {
 			div {
 				&:nth-child(2) {
 					flex-basis: 40%;
+				}
+				&:last-child {
+					flex-basis: 25%;
 				}
 			}
 		}
