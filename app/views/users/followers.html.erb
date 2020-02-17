@@ -1,8 +1,8 @@
-<div class="follow-container container">
+<div class="users-container container">
 	<h5 class="headline">フォロワー</h5>
-	<div id="followers-index">
-		<%= render 'users/follow_user_index', users: @followers %>
+	<div id="followers">
+		<%= render 'users/user_index', users: @followers %>
 	</div>
 	<!-- もっと見る -->
-	<%= link_to_next_page @followers, 'more', id: 'more-followers-index', class: 'more-btn', remote: true %>
+	<%= link_to_next_page @followers, 'more', id: 'more-followers', class: 'more-btn', remote: true %>
 </div>

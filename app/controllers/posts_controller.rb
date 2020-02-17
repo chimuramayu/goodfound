@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy]
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :new, :create, :edit, :update, :destroy, :favorites]
+  before_action :set_post, only: [:show, :edit, :update, :destroy, :favorites]
   before_action :ensure_collect_user, only: [:edit, :update, :destroy]
 
   def index
@@ -49,6 +49,10 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     redirect_to timeline_path
+  end
+
+  def favorites
+    @favorite_users = @post.favorite_users.order(id: "DESC").page(params[:page]).per(20)
   end
 
   private

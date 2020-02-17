@@ -1,0 +1,2 @@
+$('#favorite-users').append("<%= j(render 'users/user_index', users: @favorite_users) %>");
+$('#more-favorite-users').replaceWith("<%= j(link_to_next_page @favorite_users, 'more', id: 'more-favorite-users', class: 'more-btn', remote: true) %>");

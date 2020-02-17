@@ -2,10 +2,14 @@
 	<%= link_to post_favorites_path(post), method: :delete, remote: true do %>
 		<i class="fas fa-heart" style="color: #e8383d;"></i>
 	<% end %>
-	<span><%= post.favorites.count %></span>
+	<%= link_to favorites_post_path(post) do %>
+		<span><%= post.favorites.count %></span>
+	<% end %>
 <% else %>
 	<%= link_to post_favorites_path(post), method: :post, remote: true do %>
 		<i class="far fa-heart"></i>
 	<% end %>
-	<span><%= post.favorites.count %></span>
+	<%= link_to favorites_post_path(post) do %>
+		<span><%= post.favorites.count %></span>
+	<% end %>
 <% end %>

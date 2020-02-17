@@ -1,0 +1,8 @@
+<div class="users-container container">
+	<h5 class="headline">おきにいり</h5>
+	<div id="favorite-users">
+		<%= render 'users/user_index', users: @favorite_users %>
+	</div>
+	<!-- もっと見る -->
+	<%= link_to_next_page @favorite_users, 'more', id: 'more-favorite-users', class: 'more-btn', remote: true %>
+</div>
