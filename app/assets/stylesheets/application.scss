@@ -693,14 +693,17 @@ footer {
 	.profile {
 		width: 70%;
 		margin: 0 auto;
-	}
-	.profile {
 		padding: 40px 70px;
 		display: flex;
 
+		.icon-image {
+			width: 100px;
+			height: 100px;
+		}
 		.profile-detail {
-			margin-left: 30px;
+			margin-left: 15px;
 			font-size: 15px;
+			flex-basis: 70%;
 
 			.name {
 				font-size: 20px;
@@ -1093,9 +1096,14 @@ footer {
 			width: 100%;
 			padding: 30px 60px;
 
-			img {
+			.icon-image {
 				width: 70px;
 				height: 70px;
+
+				img {
+					width: 70px;
+					height: 70px;
+				}
 			}
 		}
 		.user-nav {
@@ -1441,13 +1449,19 @@ footer {
 			padding: 30px 20px;
 			width: 100%;
 
-			img {
+			.icon-image {
 				width: 50px;
 				height: 50px;
+
+				img {
+					width: 50px;
+					height: 50px;
+				}
 			}
 			.profile-detail {
 				margin-left: 10px;
 				font-size: 13px;
+
 				.name {
 					font-size: 15px;
 					margin-bottom: 10px;

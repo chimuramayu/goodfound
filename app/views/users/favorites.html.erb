@@ -1,6 +1,6 @@
 <div class="main favorites">
 	<div class="user-page">
-		<h5><strong>おきにいり</strong></h5>
+		<h5><strong><%= @user.username %>さんのおきにいり</strong></h5>
 		<!-- ユーザーのお気に入り一覧 -->
 		<div class="post-index" id="user-favorites-index">
 			<%= render 'posts/post_index', posts: @favorites %>
