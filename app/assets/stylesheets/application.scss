@@ -1293,6 +1293,19 @@ footer {
 	// サーチアイコン
 	#search-icon {
 		display: block;
+		font-size: 30px;
+		position: fixed;
+		left: 0;
+		bottom: 60px;
+		background-color: #ffffff;
+		border-top-right-radius: 5px;
+		border-bottom-right-radius: 5px;
+		border: thin solid #999;
+		border-left: none;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
 	}
 
 	// home#top
