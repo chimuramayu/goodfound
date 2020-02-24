@@ -10,6 +10,9 @@
 						<%= attachment_image_tag @user, :icon_image, size: "230x230", fallback: "default-user-image.png", class: "icon-image", id: "img", onClick: "$('#file').click()" %>
 						<%= f.attachment_field :icon_image, id: "file" %>
 					</div>
+					<% if @user.icon_image.present? %>
+						<input type="submit" name="delete_image" value="画像を削除" class="delete-image-btn">
+					<% end %>
 
 					<div class="input-form">
 						<%= f.text_field :username, placeholder: "Goodfound ID", class: "form-control" %>

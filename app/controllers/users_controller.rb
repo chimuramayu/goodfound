@@ -12,6 +12,13 @@ class UsersController < ApplicationController
   end
 
   def update
+    if params[:delete_image]
+      @user.icon_image = nil
+      @user.save
+      render 'edit'
+      return
+    end
+
     if @user.update(user_params)
       redirect_to user_path(@user)
     else

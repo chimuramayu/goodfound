@@ -39,6 +39,13 @@ class PostsController < ApplicationController
   end
 
   def update
+    if params[:delete_image]
+      @post.post_image = nil
+      @post.save
+      render 'edit'
+      return
+    end
+
     if @post.update(post_params)
       redirect_to timeline_path
     else

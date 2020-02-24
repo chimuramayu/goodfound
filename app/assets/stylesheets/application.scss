@@ -503,6 +503,21 @@ footer {
 	  color: #fff;
 	}
 }
+.delete-image-btn {
+	padding: 3px;
+	background-color: #ffffff;
+	display: block;
+	border-radius: 3px;
+	border: thin solid #000;
+	color: #000;
+	text-align: center;
+	margin: 10px auto 0;
+	font-size: 13px;
+
+	&:hover {
+		background-color: #e0e0e0;
+	}
+}
 .post-form {
 	h5 {
 		text-align: center;
