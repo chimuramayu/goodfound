@@ -83,6 +83,7 @@ input.font-awesome {
 		font-weight: bold;
   }
 }
+
 .more-btn {
 	width: 50%;
 	display: block;
@@ -96,6 +97,21 @@ input.font-awesome {
 	&:hover {
 		border: 1px solid #000;
 		color: #000;
+	}
+}
+
+.delete-image-btn {
+	padding: 3px;
+	background-color: #ffffff;
+	display: block;
+	border-radius: 3px;
+	border: thin solid #000;
+	color: #000;
+	margin: 10px auto 0;
+	font-size: 13px;
+
+	&:hover {
+		background-color: #e0e0e0;
 	}
 }
 
@@ -501,21 +517,6 @@ footer {
 	  transition: 0.2s ease-out;
 	  display: block;
 	  color: #fff;
-	}
-}
-.delete-image-btn {
-	padding: 3px;
-	background-color: #ffffff;
-	display: block;
-	border-radius: 3px;
-	border: thin solid #000;
-	color: #000;
-	text-align: center;
-	margin: 10px auto 0;
-	font-size: 13px;
-
-	&:hover {
-		background-color: #e0e0e0;
 	}
 }
 .post-form {
@@ -1076,7 +1077,17 @@ footer {
 
 	// posts#new, post#edit
 	.input-post-image {
-	  margin-bottom: 20px;
+	  margin-bottom: 10px;
+	}
+	.form-group {
+		&:first-child {
+			margin-top: 10px;
+		}
+	}
+	.post-form {
+		.delete-image-btn {
+			margin: 0 auto;
+		}
 	}
 
 	// posts#index
