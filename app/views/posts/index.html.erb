@@ -5,7 +5,7 @@
 				<%= render 'layouts/sidebar', genres: @genres %>
 			</div>
 
-			<div class="col-lg-9">
+			<div class="col-lg-9 col-sm-12 col-12">
 				<h3 class="timeline-headline">
 					<strong>Timeline</strong>
 					<%= link_to timeline_path do %>
@@ -31,5 +31,10 @@
     <a href="#">
       <i class="far fa-arrow-alt-circle-up"></i>
     </a>
+  </span>
+  <span id="search-icon">
+  	<%= link_to list_path do %>
+  		<i class="fa fa-search"></i>
+  	<% end %>
   </span>
 </div>

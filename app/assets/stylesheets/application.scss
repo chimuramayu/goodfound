@@ -207,6 +207,9 @@ input.font-awesome {
 		width: 100%;
 	}
 }
+#search-icon {
+	display: none;
+}
 
 // アイコンイメージ
 .icon-image {
@@ -963,12 +966,13 @@ footer {
 
 	// サイドバー
 	.sidebar {
-	 display: none;
+		display: none;
 	}
 
 	// 画面サイズ
 	.main, .post-form, .users-container {
 		padding: 80px 0 20px;
+		position: relative;
 	}
 
 	// home#top
@@ -1243,11 +1247,6 @@ footer {
 	 	}
 	 }
 
-	// サイドバー
-	.sidebar {
-		display: none;
-	}
-
 	// トップページボタン
 	#top-page {
 		display: none;
@@ -1256,6 +1255,11 @@ footer {
 	// エラーメッセージ
 	.error-message {
 		width: 100%;
+	}
+
+	// サーチアイコン
+	#search-icon {
+		display: block;
 	}
 
 	// home#top
