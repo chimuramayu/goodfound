@@ -1,4 +1,4 @@
-<div class="sidebar" id="sp-sidebar">
+<div class="sidebar">
 	<div class="sidebar-keyword">
 		<p class="headline"><strong>キーワード検索</strong></p>
 		<%= form_tag(search_path, method: :get) do %>
@@ -15,10 +15,12 @@
 
 	<div class="sidebar-genre">
 		<p class="headline"><strong>ジャンル検索</strong></p>
-		<% genres.each do |genre| %>
-			<div class="genre-item">
-				<%= link_to genre.name, genre_path(genre), class: "" %>
-			</div>
-		<% end %>
+		<div class="genre-list">
+			<% genres.each do |genre| %>
+				<div class="genre-item">
+					<%= link_to genre.name, genre_path(genre), class: "" %>
+				</div>
+			<% end %>
+		</div>
 	</div>
 </div>

@@ -182,29 +182,36 @@ input.font-awesome {
 	padding: 30px 10px;
 	border-radius: 10px;
 	text-align: center;
+  position: sticky;
+  top: 90px;
 
 	.headline {
-		margin-bottom: 15px;
+		margin-bottom: 10px;
 		font-size: 20px;
 	}
 	.text {
 		margin-top: 10px;
 	}
 	.actions {
-		margin:10px 0 30px;
-	}
-	.genre-item {
-		width: 80%;
-		margin: 4px auto 0;
-		border-bottom: 2px dotted black;
-		transition: font-weight .3s;
+		margin:10px 0 20px;
 
-		&:hover {
-			font-weight: bold;
+		.btn {
+			width: 100%;
 		}
 	}
-	.btn {
-		width: 100%;
+	.genre-list {
+		overflow-y: scroll;
+		height: 320px;
+		.genre-item {
+			width: 80%;
+			margin: 4px auto 0;
+			border-bottom: 2px dotted black;
+			transition: font-weight .3s;
+
+			&:hover {
+				font-weight: bold;
+			}
+		}
 	}
 }
 #search-icon {
