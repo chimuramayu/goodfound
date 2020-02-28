@@ -15,11 +15,11 @@
       <div class="container">
         <% if user_signed_in? %>
           <%= link_to timeline_path, class: "navbar-brand mr-auto" do %>
-            <strong>Goodfound</strong>
+            <%= image_tag 'logo.png', size: '180x40' %>
           <% end %>
         <% else %>
           <%= link_to root_path, class: "navbar-brand mr-auto" do %>
-            <strong>Goodfound</strong>
+            <%= image_tag 'logo.png', size: '180x40' %>
           <% end %>
         <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">

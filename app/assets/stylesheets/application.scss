@@ -218,6 +218,7 @@ input.font-awesome {
 	.genre-list {
 		overflow-y: scroll;
 		height: 320px;
+
 		.genre-item {
 			width: 80%;
 			margin: 4px auto 0;
@@ -352,7 +353,7 @@ footer {
 		font-weight: bolder;
 		-webkit-text-stroke: 1px #d2b48c;
   	text-stroke: 1px #d2b48c;
-  	font-family: 'Modern',sans-serif;
+  	font-family: 'Modern','PT Mono',sans-serif;
 	}
 	.link {
 		position: absolute;
@@ -689,7 +690,6 @@ footer {
 				width: 40px;
 				height:40px;
 			}
-
 			strong {
 				font-size: 18px;
 				margin-left: 10px;
@@ -704,6 +704,9 @@ footer {
 			.actions {
 				margin-left: auto;
 			}
+		}
+		.comment {
+			margin-left: 50px;
 		}
 	}
 }
